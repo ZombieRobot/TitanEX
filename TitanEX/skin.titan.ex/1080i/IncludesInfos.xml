@@ -1,0 +1,834 @@
+<!--Titan-->
+<includes>
+
+	<!--MovieInfos -->	
+	<include name="MovieInfos">
+		<control type="group">
+			<visible>Control.IsVisible(50)</visible>
+			<visible>Container.Content(movies)</visible>	
+			<include>animation_open_close</include>
+			<include>animation_visible_hidden</include>
+			<!--Infos-->		
+			<control type="label">	<!--Tiltle-->				
+				<posx>612</posx>
+				<posy>985</posy>						
+				<width>700</width> 	
+				<font>TitanBold35</font>			
+				<textcolor>black</textcolor>			
+				<label>$INFO[ListItem.Label]</label>	
+				<align>center</align>
+				<aligny>center</aligny>
+			</control>
+			<control type="group">	<!--Relase, Running Time, Genre, Director-->
+				<posy>360</posy>
+				<control type="label">	<!--Relase Date-->								
+					<posx>570</posx>
+					<posy>0</posy> 					
+					<width>200</width>				
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>				
+					<label>41030</label>				
+				</control>
+				<control type="label">
+					<posx>740</posx>
+					<posy>0</posy>						
+					<width>350</width>					
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>				
+					<label>$INFO[ListItem.Year]</label>					
+				</control>
+				<control type="label">
+					<visible>IsEmpty(ListItem.Year)</visible>
+					<posx>740</posx>
+					<posy>0</posy>						
+					<width>350</width>					
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>				
+					<label>...</label>					
+				</control>
+				<control type="label">	<!--Running Time-->					
+					<posx>570</posx>
+					<posy>35</posy>						
+					<width>200</width>				
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>
+					<label>41031</label>				
+				</control>
+				<control type="label">
+					<visible>!IsEmpty(ListItem.Duration)</visible>	
+					<posx>740</posx>
+					<posy>35</posy>						
+					<width>350</width>				
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>				
+					<label>$INFO[ListItem.Duration] min</label>				
+				</control>	
+				<control type="label">
+					<visible>IsEmpty(ListItem.Duration)</visible>	
+					<posx>740</posx>
+					<posy>35</posy>						
+					<width>350</width>				
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>				
+					<label>...</label>				
+				</control>	
+				<control type="label">	<!--Genre-->					
+					<posx>570</posx>
+					<posy>70</posy>						
+					<width>200</width>				
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>
+					<label>41012</label>				
+				</control>
+				<control type="label">
+					<posx>740</posx>
+					<posy>70</posy>						
+					<width>350</width>			
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>				
+					<label>$INFO[ListItem.Genre]</label>				
+				</control>	
+				<control type="label">
+					<visible>IsEmpty(ListItem.Genre)</visible>
+					<posx>740</posx>
+					<posy>70</posy>						
+					<width>350</width>			
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>				
+					<label>...</label>				
+				</control>	
+				<control type="label">	<!--Director-->					
+					<posx>570</posx>
+					<posy>105</posy>						
+					<width>200</width>		
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>
+					<label>41015</label>				
+				</control>			
+				<control type="label">
+					<posx>740</posx>
+					<posy>105</posy>						
+					<width>350</width>			
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>				
+					<label>$INFO[ListItem.Director]</label>				
+				</control>	
+				<control type="label">
+					<visible>IsEmpty(ListItem.Director)</visible>
+					<posx>740</posx>
+					<posy>105</posy>						
+					<width>350</width>			
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>				
+					<label>...</label>				
+				</control>	
+			</control>	
+			<control type="textbox"><!--Textbox-->
+					<visible>!Skin.HasSetting(ScrollInfo)</visible>
+					<posx>570</posx>
+					<posy>566</posy>	
+					<width>530</width>
+					<height>270</height>
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>
+					<align>justify</align>
+					<shadowcolor></shadowcolor> <!-- Shadow -->
+					<autoscroll>false</autoscroll>
+					<label>$INFO[ListItem.Plot]</label>				
+				</control>
+			<!--RSS Info-->
+			<control type="label">	<!--Rating-->	
+				<visible>!IsEmpty(ListItem.Label2)</visible>
+				<posx>400</posx>
+				<posy>940</posy> 		
+				<width>500</width>
+				<font>TitanBold35</font>			
+				<textcolor>Black</textcolor>
+				<label>$INFO[ListItem.Label2,]</label>	
+			</control>
+			<control type="label">	<!--Page-Info-->	
+				<posx>470</posx>
+				<posy>984</posy> 
+				<width>250</width>
+				<align>right</align>				
+				<font>Titan35</font>
+				<textcolor>Black</textcolor>	
+				<label>$INFO[Container.CurrentPage]/$INFO[Container.NumPages]</label>
+			</control>			
+			<control type="image">	<!--Rating-->						
+				<posx>100</posx>
+				<posy>1001</posy>
+				<width>270</width>
+				<height>25</height>	
+				<texture fallback="rating/stars/NA.png">$INFO[ListItem.Rating,rating/10stars/,.png]</texture>	
+				<animation effect="fade" start="100" end="0" time="400" reversible="true">Hidden</animation>
+			</control>
+		</control>
+	</include>
+	
+	<!--TVShowsInfos -->	
+	<include name="TVShowsInfos">
+		<control type="group">
+			<visible>Control.IsVisible(50)</visible>
+			<visible>Container.Content(tvshows)</visible>	
+			<include>animation_fade_open_close</include>			
+			<!--Infos-->		
+			<control type="label">	<!--Tiltle-->				
+				<posx>500</posx>
+				<posy>295</posy>						
+				<width>600</width> 	
+				<font>TitanBold40</font>			
+				<textcolor>TitanMain</textcolor>			
+				<label>$INFO[ListItem.Label]</label>				
+			</control>
+			<control type="group">	<!--Relase, Running Time, Genre, Director-->
+				<posy>395</posy>
+				<control type="label">	<!--Relase Date-->
+					<visible>!IsEmpty(ListItem.Year)</visible>			
+					<posx>500</posx>
+					<posy>0</posy> 					
+					<width>200</width>				
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>				
+					<label>41030</label>				
+				</control>
+				<control type="label">
+					<posx>670</posx>
+					<posy>0</posy>						
+					<width>350</width>					
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>				
+					<label>$INFO[ListItem.Year]</label>					
+				</control>
+				<control type="label">	<!--Genre-->
+					<visible>!IsEmpty(ListItem.Genre)</visible>
+					<posx>500</posx>
+					<posy>35</posy>						
+					<width>200</width>				
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>
+					<label>41012</label>				
+				</control>
+				<control type="label">
+					<posx>670</posx>
+					<posy>35</posy>						
+					<width>350</width>			
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>				
+					<label>$INFO[ListItem.Genre]</label>				
+				</control>	
+			</control>	
+			<control type="textbox"><!--Textbox-->
+				<visible>!Skin.HasSetting(ScrollInfo)</visible>
+				<posx>500</posx>
+				<posy>550</posy>	
+				<width>600</width>
+				<height>270</height>
+				<font>TitanLight32</font>				
+				<textcolor>TitanGrey</textcolor>
+				<shadowcolor></shadowcolor> <!-- Shadow -->
+				<autoscroll>false</autoscroll>
+				<label>$INFO[ListItem.Plot]</label>				
+			</control>
+			<!--RSS Info-->
+			<control type="label">	<!--Rating-->					
+				<posx>400</posx>
+				<posy>940</posy> 		
+				<width>500</width>
+				<font>TitanBold35</font>			
+				<textcolor>TitanBlack</textcolor>
+				<label>$INFO[ListItem.Rating]</label>	
+			</control>
+			<control type="label">	<!--Page-Info-->	
+				<posx>1100</posx>
+				<posy>940</posy> 
+				<width>250</width>
+				<align>right</align>				
+				<font>Titan35</font>
+				<textcolor>TitanBack</textcolor>	
+				<label>$INFO[Container.CurrentPage]/$INFO[Container.NumPages]</label>
+			</control>			
+			<control type="image">	<!--Rating-->						
+				<posx>100</posx>
+				<posy>955</posy>
+				<width>270</width>
+				<height>25</height>	
+				<texture fallback="rating/stars/NA.png">$INFO[ListItem.Rating,rating/10stars/,.png]</texture>													
+			</control>
+		</control>
+	</include>
+	
+	<!--EpisodesInfos -->	
+	<include name="EpisodesInfos">
+		<control type="group">
+			<visible>Control.IsVisible(50)</visible>
+			<visible>Container.Content(episodes)</visible>	
+			<include>animation_fade_open_close</include>			
+			<!--Infos-->		
+			<control type="label">	<!--Tiltle-->				
+				<posx>500</posx>
+				<posy>295</posy>						
+				<width>600</width> 	
+				<font>TitanBold35</font>			
+				<textcolor>TitanMain</textcolor>			
+				<label>$INFO[ListItem.Label]</label>				
+			</control>
+			<control type="group">	<!--Relase, Running Time, Genre, Director-->
+				<posy>390</posy>
+				<control type="label">	<!--Relase Date-->							
+					<posx>500</posx>
+					<posy>0</posy> 					
+					<width>200</width>				
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>				
+					<label>41030</label>				
+				</control>
+				<control type="label">
+					<posx>670</posx>
+					<posy>0</posy>						
+					<width>350</width>					
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>				
+					<label>$INFO[ListItem.Year]</label>					
+				</control>
+				<control type="label">
+					<visible>IsEmpty(ListItem.Year)</visible>	
+					<posx>670</posx>
+					<posy>0</posy>						
+					<width>350</width>					
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>				
+					<label>...</label>					
+				</control>
+				<control type="label">	<!--Running Time-->				
+					<posx>500</posx>
+					<posy>35</posy>						
+					<width>200</width>				
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>
+					<label>41031</label>				
+				</control>
+				<control type="label">
+					<visible>!IsEmpty(ListItem.Duration)</visible>	
+					<posx>670</posx>
+					<posy>35</posy>						
+					<width>350</width>				
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>				
+					<label>$INFO[ListItem.Duration] min</label>				
+				</control>	
+				<control type="label">
+					<visible>IsEmpty(ListItem.Duration)</visible>	
+					<posx>670</posx>
+					<posy>35</posy>						
+					<width>350</width>				
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>				
+					<label>...</label>				
+				</control>	
+				<control type="label">	<!--Director-->					
+					<posx>500</posx>
+					<posy>70</posy>						
+					<width>200</width>		
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>
+					<label>41015</label>				
+				</control>			
+				<control type="label">
+					<posx>670</posx>
+					<posy>70</posy>						
+					<width>350</width>			
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>				
+					<label>$INFO[ListItem.Director]</label>				
+				</control>	
+				<control type="label">
+					<visible>IsEmpty(ListItem.Director)</visible>
+					<posx>670</posx>
+					<posy>70</posy>						
+					<width>350</width>			
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>				
+					<label>...</label>				
+				</control>	
+			</control>	
+			<control type="textbox"><!--Textbox-->
+					<visible>!Skin.HasSetting(ScrollInfo)</visible>
+					<posx>100</posx>
+					<posy>570</posy>	
+					<width>1000</width>
+					<height>235</height>
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>
+					<shadowcolor></shadowcolor> <!-- Shadow -->
+					<autoscroll>false</autoscroll>
+					<label>$INFO[ListItem.Plot]</label>				
+				</control>
+			<!--RSS Info-->
+			<control type="label">	<!--Rating-->					
+				<posx>400</posx>
+				<posy>940</posy> 		
+				<width>500</width>
+				<font>TitanBold35</font>			
+				<textcolor>TitanBlack</textcolor>
+				<label>$INFO[ListItem.Rating]</label>	
+			</control>
+			<control type="label">	<!--Page-Info-->	
+				<posx>1100</posx>
+				<posy>940</posy> 
+				<width>250</width>
+				<align>right</align>				
+				<font>Titan35</font>
+				<textcolor>TitanBack</textcolor>	
+				<label>$INFO[Container.CurrentPage]/$INFO[Container.NumPages]</label>
+			</control>			
+			<control type="image">	<!--Rating-->						
+				<posx>100</posx>
+				<posy>955</posy>
+				<width>270</width>
+				<height>25</height>	
+				<texture fallback="rating/stars/NA.png">$INFO[ListItem.Rating,rating/10stars/,.png]</texture>													
+			</control>
+		</control>
+	</include>
+	
+	<!--SeasonInfos -->	
+	<include name="SeasonInfos">
+		<control type="group">
+			<visible>Control.IsVisible(50)</visible>
+			<visible>Container.Content(seasons)</visible>
+			<include>animation_fade_open_close</include>			
+			<!--Infos-->		
+			<control type="label">	<!--Tiltle-->				
+				<posx>500</posx>
+				<posy>295</posy>						
+				<width>600</width> 	
+				<font>TitanBold40</font>			
+				<textcolor>TitanMain</textcolor>			
+				<label>$INFO[ListItem.Label]</label>				
+			</control>
+			<control type="group">	<!--Relase, Running Time, Genre, Director-->
+				<posy>395</posy>
+				<control type="label">	<!--Relase Date-->					
+					<posx>500</posx>
+					<posy>0</posy> 					
+					<width>200</width>				
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>				
+					<label>41030</label>				
+				</control>
+				<control type="label">
+					<posx>670</posx>
+					<posy>0</posy>						
+					<width>350</width>					
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>				
+					<label>$INFO[ListItem.Year]</label>					
+				</control>
+				<control type="label">
+					<visible>IsEmpty(ListItem.Year)</visible>
+					<posx>670</posx>
+					<posy>0</posy>						
+					<width>350</width>					
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>				
+					<label>...</label>					
+				</control>
+				<control type="label">	<!--Genre-->					
+					<posx>500</posx>
+					<posy>35</posy>						
+					<width>200</width>				
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>
+					<label>41012</label>				
+				</control>
+				<control type="label">
+					<posx>670</posx>
+					<posy>35</posy>						
+					<width>350</width>			
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>				
+					<label>$INFO[ListItem.Genre]</label>				
+				</control>
+				<control type="label">
+					<visible>IsEmpty(ListItem.Genre)</visible>
+					<posx>670</posx>
+					<posy>35</posy>						
+					<width>350</width>			
+					<font>TitanLight32</font>				
+					<textcolor>TitanGrey</textcolor>				
+					<label>...</label>				
+				</control>
+			</control>	
+			<control type="textbox"><!--Textbox-->
+				<visible>!Skin.HasSetting(ScrollInfo)</visible>
+				<posx>500</posx>
+				<posy>550</posy>	
+				<width>600</width>
+				<height>270</height>
+				<font>TitanLight32</font>				
+				<textcolor>TitanGrey</textcolor>
+				<shadowcolor></shadowcolor> <!-- Shadow -->
+				<autoscroll>false</autoscroll>
+				<label>$INFO[ListItem.Plot]</label>				
+			</control>
+			<!--RSS Info-->
+			<control type="label">	<!--Rating-->				
+				<posx>400</posx>
+				<posy>940</posy> 		
+				<width>500</width>
+				<font>TitanBold35</font>			
+				<textcolor>TitanBlack</textcolor>
+				<label>$INFO[ListItem.Rating]</label>	
+			</control>
+			<control type="label">	<!--Page-Info-->	
+				<posx>1100</posx>
+				<posy>940</posy> 
+				<width>250</width>
+				<align>right</align>				
+				<font>Titan35</font>
+				<textcolor>TitanBack</textcolor>	
+				<label>$INFO[Container.CurrentPage]/$INFO[Container.NumPages]</label>
+			</control>			
+			<control type="image">	<!--Rating-->						
+				<posx>100</posx>
+				<posy>955</posy>
+				<width>270</width>
+				<height>25</height>	
+				<texture fallback="rating/stars/NA.png">$INFO[ListItem.Rating,rating/10stars/,.png]</texture>													
+			</control>
+		</control>
+	</include>
+	
+	<!--OtherInfos-->
+	<include name="OtherInfos">
+		<control type="group">
+			<visible>Control.IsVisible(50)</visible>
+			<visible>!Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(episodes) + !Container.Content(seasons)</visible>	
+			<include>animation_fade_open_close</include>			
+			<!--Infos-->		
+			<control type="label">	<!--Tiltle-->				
+				<posx>115</posx>
+				<posy>295</posy>						
+				<width>900</width> 	
+				<font>TitanBold45</font>			
+				<textcolor>TitanMain</textcolor>			
+				<label>$INFO[ListItem.Label]</label>				
+			</control>
+			<!--RSS Info-->
+			<control type="label">	<!--Label2-->					
+				<posx>115</posx>
+				<posy>860</posy> 		
+				<width>500</width>
+				<font>TitanLight45</font>			
+				<textcolor>TitanGrey</textcolor>
+				<label>$INFO[ListItem.Label2,]</label>	
+			</control>
+			<control type="label">	<!--Page-Info-->	
+				<posx>1100</posx>
+				<posy>940</posy> 
+				<width>250</width>
+				<align>right</align>				
+				<font>Titan35</font>
+				<textcolor>TitanBack</textcolor>	
+				<label>$INFO[Container.CurrentPage]/$INFO[Container.NumPages]</label>
+			</control>			
+		</control>
+	</include>
+	
+	<!--MovieDialogInfos-->
+	<include name="MovieDialogInfos">
+		<control type="group" id="5011">
+			<visible>Container.Content(movies)</visible>		
+			<control type="label">	<!--Relase Date-->
+				<posx>550</posx>
+				<posy>170</posy> 				
+				<width>200</width>				
+				<font>TitanLight32</font>				
+				<textcolor>TitanGrey</textcolor>				
+				<label>41030</label>	
+			</control>
+			<control type="label">
+				<visible>!IsEmpty(ListItem.Year)</visible>
+				<posx>750</posx>
+				<posy>170</posy>						
+				<width>550</width>					
+				<font>TitanLight30</font>				
+				<textcolor>TitanGrey</textcolor>				
+				<label>$INFO[ListItem.Year]</label>	
+			</control>
+			<control type="label">
+				<visible>IsEmpty(ListItem.Year)</visible>
+				<posx>750</posx>
+				<posy>170</posy>						
+				<width>550</width>					
+				<font>TitanLight30</font>				
+				<textcolor>TitanWhite</textcolor>				
+				<label>...</label>	
+			</control>
+			<control type="label">	<!--Running Time-->
+				<posx>550</posx>
+				<posy>210</posy>						
+				<width>200</width>				
+				<font>TitanLight32</font>				
+				<textcolor>TitanGrey</textcolor>
+				<label>41031</label>	
+			</control>
+			<control type="label">
+				<visible>!IsEmpty(ListItem.Duration)</visible>
+				<posx>750</posx>
+				<posy>210</posy>						
+				<width>550</width>				
+				<font>TitanLight30</font>				
+				<textcolor>TitanGrey</textcolor>				
+				<label>$INFO[ListItem.Duration] min</label>	
+			</control>	
+			<control type="label">
+				<visible>IsEmpty(ListItem.Duration)</visible>
+				<posx>750</posx>
+				<posy>210</posy>						
+				<width>550</width>				
+				<font>TitanLight30</font>				
+				<textcolor>TitanGrey</textcolor>				
+				<label>...</label>	
+			</control>	
+			<control type="label">	<!--Genre-->
+				<posx>550</posx>
+				<posy>250</posy>						
+				<width>200</width>				
+				<font>TitanLight32</font>				
+				<textcolor>TitanGrey</textcolor>
+				<label>41012</label>	
+			</control>
+			<control type="label">
+				<visible>!IsEmpty(ListItem.Genre)</visible>
+				<posx>750</posx>
+				<posy>250</posy>						
+				<width>550</width>			
+				<font>TitanLight30</font>				
+				<textcolor>TitanGrey</textcolor>				
+				<label>$INFO[ListItem.Genre]</label>	
+			</control>	
+			<control type="label">
+				<visible>IsEmpty(ListItem.Genre)</visible>
+				<posx>750</posx>
+				<posy>250</posy>						
+				<width>550</width>			
+				<font>TitanLight30</font>				
+				<textcolor>TitanGrey</textcolor>				
+				<label>...</label>	
+			</control>	
+			<control type="label">	<!--Director-->
+				<posx>550</posx>
+				<posy>290</posy>						
+				<width>200</width>		
+				<font>TitanLight32</font>				
+				<textcolor>TitanGrey</textcolor>
+				<label>41015</label>	
+			</control>			
+			<control type="label">
+				<visible>!IsEmpty(ListItem.Director)</visible>
+				<posx>750</posx>
+				<posy>290</posy>						
+				<width>550</width>			
+				<font>TitanLight30</font>				
+				<textcolor>TitanGrey</textcolor>				
+				<label>$INFO[ListItem.Director]</label>	
+			</control>	
+			<control type="label">
+				<visible>IsEmpty(ListItem.Director)</visible>
+				<posx>750</posx>
+				<posy>290</posy>						
+				<width>550</width>			
+				<font>TitanLight30</font>				
+				<textcolor>TitanGrey</textcolor>				
+				<label>...</label>	
+			</control>	
+			<control type="textbox"><!--Text-->
+				<posx>550</posx>
+				<posy>370</posy>	
+				<width>900</width>
+				<height>305</height>
+				<font>TitanLight32</font>				
+				<textcolor>TitanGrey</textcolor>
+				<autoscroll>false</autoscroll>
+				<label>$INFO[ListItem.Plot]</label>						
+			</control>
+		</control>
+	</include>
+	
+	<!--TVShowDialogInfos-->
+	<include name="TVShowDialogInfos">
+		<control type="group" id="5011">
+			<visible>Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>			
+			<control type="label">	<!--Relase TV-Shows-->
+				<visible>Container.Content(tvshows)</visible>
+				<posx>550</posx>
+				<posy>200</posy> 				
+				<width>200</width>				
+				<font>TitanLight32</font>				
+				<textcolor>TitanGrey</textcolor>				
+				<label>41030</label>	
+			</control>
+			<control type="label">
+				<visible>Container.Content(tvshows)</visible>
+				<visible>!IsEmpty(ListItem.Year)</visible>
+				<posx>750</posx>
+				<posy>200</posy>						
+				<width>550</width>					
+				<font>TitanLight32</font>				
+				<textcolor>TitanGrey</textcolor>				
+				<label>$INFO[ListItem.Year]</label>	
+			</control>
+			<control type="label">
+				<visible>Container.Content(tvshows)</visible>
+				<visible>IsEmpty(ListItem.Year)</visible>
+				<posx>750</posx>
+				<posy>200</posy>						
+				<width>550</width>					
+				<font>TitanLight32</font>				
+				<textcolor>TitanGrey</textcolor>				
+				<label>...</label>	
+			</control>
+			<control type="label">	<!--Relase Episodes-->
+				<visible>Container.Content(episodes)</visible>
+				<posx>150</posx>
+				<posy>200</posy> 				
+				<width>200</width>				
+				<font>AvalonLight32</font>				
+				<textcolor>TitanGrey</textcolor>				
+				<label>41030</label>	
+			</control>
+			<control type="label">
+				<visible>Container.Content(episodes)</visible>
+				<visible>!IsEmpty(ListItem.Premiered)</visible>
+				<posx>350</posx>
+				<posy>200</posy>						
+				<width>550</width>					
+				<font>TitanLight32</font>				
+				<textcolor>TitanGrey</textcolor>		
+				<label>$INFO[ListItem.Premiered]</label>	
+			</control>	
+			<control type="label">
+				<visible>Container.Content(episodes)</visible>
+				<visible>IsEmpty(ListItem.Premiered)</visible>
+				<posx>350</posx>
+				<posy>200</posy>						
+				<width>550</width>					
+				<font>TitanLight32</font>				
+				<textcolor>TitanGrey</textcolor>		
+				<label>...</label>	
+			</control>	
+			<control type="label">	<!--Genre TV-Shows -->
+				<visible>Container.Content(tvshows)</visible>
+				<posx>550</posx>
+				<posy>240</posy>						
+				<width>200</width>				
+				<font>TitanLight32</font>				
+				<textcolor>TitanGrey</textcolor>
+				<label>41012</label>	
+			</control>
+			<control type="label">
+				<visible>Container.Content(tvshows)</visible>
+				<visible>!IsEmpty(ListItem.Genre)</visible>
+				<posx>750</posx>
+				<posy>240</posy>						
+				<width>550</width>			
+				<font>TitanLight32</font>				
+				<textcolor>TitanGrey</textcolor>				
+				<label>$INFO[ListItem.Genre]</label>	
+			</control>		
+			<control type="label">
+				<visible>Container.Content(tvshows)</visible>
+				<visible>IsEmpty(ListItem.Genre)</visible>
+				<posx>750</posx>
+				<posy>240</posy>						
+				<width>550</width>			
+				<font>TitanLight32</font>				
+				<textcolor>TitanGrey</textcolor>				
+				<label>...</label>	
+			</control>		
+			<control type="label">	<!--Director Episodes-->
+				<visible>Container.Content(episodes)</visible>
+				<posx>150</posx>
+				<posy>240</posy>						
+				<width>200</width>				
+				<font>TitanLight32</font>				
+				<textcolor>TitanGrey</textcolor>
+				<label>41015</label>	
+			</control>			
+			<control type="label">
+				<visible>Container.Content(episodes)</visible>
+				<visible>!IsEmpty(ListItem.Director)</visible>
+				<posx>350</posx>
+				<posy>240</posy>						
+				<width>550</width>			
+				<font>TitanLight32</font>				
+				<textcolor>TitanGrey</textcolor>				
+				<label>$INFO[ListItem.Director]</label>	
+			</control>
+			<control type="label">
+				<visible>Container.Content(episodes)</visible>
+				<visible>IsEmpty(ListItem.Director)</visible>
+				<posx>350</posx>
+				<posy>240</posy>						
+				<width>550</width>			
+				<font>TitanLight32</font>				
+				<textcolor>TitanGrey</textcolor>				
+				<label>...</label>	
+			</control>
+			<control type="label">	<!--Running Time Episodes-->
+				<visible>Container.Content(episodes)</visible>
+				<posx>150</posx>
+				<posy>280</posy>						
+				<width>200</width>				
+				<font>TitanLight32</font>				
+				<textcolor>TitanGrey</textcolor>
+				<label>41031</label>	
+			</control>
+			<control type="label">
+				<visible>Container.Content(episodes)</visible>
+				<visible>!IsEmpty(ListItem.Duration)</visible>
+				<posx>350</posx>
+				<posy>280</posy>						
+				<width>550</width>			
+				<font>TitanLight32</font>				
+				<textcolor>TitanGrey</textcolor>				
+				<label>$INFO[ListItem.Duration] min</label>	
+			</control>		
+			<control type="label">
+				<visible>Container.Content(episodes)</visible>
+				<visible>IsEmpty(ListItem.Duration)</visible>
+				<posx>350</posx>
+				<posy>280</posy>						
+				<width>550</width>			
+				<font>TitanLight32</font>				
+				<textcolor>TitanGrey</textcolor>				
+				<label>...</label>	
+			</control>		
+			<control type="textbox"><!--Textbox TV-Shows-->
+				<visible>!Container.Content(episodes)</visible>
+				<posx>550</posx>
+				<posy>330</posy><!--370-->	
+				<width>900</width>
+				<height>305</height>
+				<font>TitanLight32</font>				
+				<textcolor>TitanGrey</textcolor>
+				<autoscroll>false</autoscroll>
+				<label>$INFO[ListItem.Plot]</label>						
+			</control>	
+			<control type="textbox"><!--Textbox Episodes-->
+				<visible>Container.Content(episodes)</visible>
+				<posx>150</posx>
+				<posy>420</posy><!--370-->	
+				<width>1200</width>
+				<height>230</height>
+				<font>TitanLight32</font>				
+				<textcolor>TitanGrey</textcolor>
+				<autoscroll>false</autoscroll>
+				<label>$INFO[ListItem.Plot]</label>						
+			</control>	
+		</control>
+	</include>
+		
+</includes>

@@ -1,0 +1,192 @@
+<!--Titan-->
+<window id="6">
+	<defaultcontrol always="true">50</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<views>50</views>
+
+	<controls>
+		
+		<!--Hidden Search Button-->
+		<control type="radiobutton" id="19">
+			<description>Filter (hidden)</description>
+			<include>HiddenButton</include>
+		</control>
+		
+		<!--Global Background-->
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<fadetime>600</fadetime>
+			<texture background="true">backgrounds/global.png</texture>	
+			<animation effect="fade" time="1000" start="100" end="0">WindowOpen</animation>	
+			<visible>!Skin.HasSetting(bg_change)</visible>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<fadetime>600</fadetime>
+			<texture background="true">backgrounds/ocean.png</texture>	
+			<animation effect="fade" time="1000" start="100" end="0">WindowOpen</animation>	
+			<visible>Skin.HasSetting(bg_change)</visible>
+		</control>
+		
+		<!--Fanart View_50_Info_Panel-->
+		<control type="group">			
+			<visible>Control.IsVisible(50)</visible>				
+			<control type="image"><!--Fanart-->	
+				<animation effect="fade" time="600">WindowOpen</animation>		
+				<animation effect="fade" time="1000">WindowClose</animation>	
+				<include>animation_fade_visible_hidden</include>
+				<include>Dimensions_Fullscreen</include>
+				<fadetime>800</fadetime>				
+				<texture background="true" fallback="backgrounds/global.png">$INFO[Listitem.Property(Fanart_Image)]</texture>	
+				<visible>!Skin.HasSetting(bg_change)</visible>
+			</control>	
+			<control type="image"><!--Fanart-->	
+				<animation effect="fade" time="600">WindowOpen</animation>		
+				<animation effect="fade" time="1000">WindowClose</animation>	
+				<include>animation_fade_visible_hidden</include>
+				<include>Dimensions_Fullscreen</include>
+				<fadetime>800</fadetime>				
+				<texture background="true" fallback="backgrounds/ocean.png">$INFO[Listitem.Property(Fanart_Image)]</texture>	
+				<visible>Skin.HasSetting(bg_change)</visible>
+			</control>	
+			<control type="image"><!--Overlay-->	
+				<include>animation_open_close</include>	
+				<include>animation_visible_hidden</include>
+				<include>Dimensions_Fullscreen</include>
+				<fadetime>1000</fadetime>
+				<texture background="true">fanart_overlay.png</texture>	
+				<aspectratio scalediffuse="false" align="right">scale</aspectratio>
+			</control>				
+		</control>		
+		
+		<!-- Header Video-->
+		<include>Header_Video</include>		
+		<!--Common Clock-->			
+		<include>Common_Clock</include>		
+		<!--Now Playing Video-->
+		<include>NowPlayingVideo</include>	
+		<!--Now Playing Music-->
+		<include>NowPlayingMusic</include>	
+		
+		<!--View-->
+		<include>View_50_List</include>
+		
+		<!--Dim Sub Menu-->		
+		<control type="image">				
+			<animation time="550" effect="fade" start="100" end="0" condition="!ControlGroup(9000).HasFocus()">Conditional</animation>					
+			<animation time="600" effect="fade" tween="cubic" easing="out" start="100" end="0">WindowClose</animation>				
+			<include>Dimensions_Fullscreen</include>				
+			<texture background="true">common/semi_trans_back_hidden_menu1.png</texture>		
+			<visible>!skin.hassetting(theme.blue)</visible>
+		</control>
+		<control type="image">				
+			<animation time="550" effect="fade" start="100" end="0" condition="!ControlGroup(9000).HasFocus()">Conditional</animation>					
+			<animation time="600" effect="fade" tween="cubic" easing="out" start="100" end="0">WindowClose</animation>				
+			<include>Dimensions_Fullscreen</include>				
+			<texture background="true">common/semi_trans_back_hidden_menu.png</texture>	
+			<visible>skin.hassetting(theme.blue)</visible>
+		</control>
+		
+		<!--Start Sub Menu-->	
+		<control type="group">	
+			<visible>Control.IsVisible(50)</visible>
+			<include>animation_fade_open_close</include>
+			<include>animation_fade_visible_hidden</include>
+			<posx>-14</posx>
+			<control type="image">				<!--Sub Menu Panel-->				
+				<posx>61</posx>
+				<posy>100</posy>
+				<width>612</width>
+				<height>890</height>
+				<texture>sub_menu.png</texture>						
+				<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
+					<effect type="slide" start="-50" end="-600" time="400" tween="cubic" easing="inout"/>				
+				</animation>
+			</control>
+			<control type="image">				<!--Sub Menu Panel-->				
+				<posx>-178</posx>
+				<posy>440</posy>
+				<width>64</width>
+				<height>199</height>
+				<texture>hiddenmenu_tab.png</texture>						
+				<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
+					<effect type="slide" start="0" end="190" time="400" tween="cubic" easing="inout"/>				
+				</animation>
+			</control>
+			<control type="grouplist" id="9000"><!--Grouplist Button-->		
+				<posx>124</posx>
+				<posy>160</posy>
+				<width>500</width>
+				<height>900</height>
+				<itemgap>3</itemgap>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<orientation>vertical</orientation>
+				<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
+					<effect type="slide" start="-50" end="-600" time="400" tween="cubic" easing="inout"/>						
+				</animation>	
+
+				<!--Buttons-->
+				<control type="label" id="200">			<!--Label Menu-->					
+					<width>477</width>
+					<align>left</align>
+					<textoffsetx>50</textoffsetx>
+					<font>TitanBold40</font>
+					<label>$LOCALIZE[41090]:</label>	
+					<textcolor>TitanBlack</textcolor>									
+				</control>
+				<control type="image" id="201">			<!--Separator-->						
+					<width>477</width>					
+					<height>20</height>	
+					<align>left</align>	
+					<texture>common/menu_separator.png</texture>				
+				</control>	
+				<control type="radiobutton" id="14">	<!--Button Watched Toggle-->					
+					<width>477</width>
+					<align>left</align>				
+					<label>41039</label>								
+				</control>	
+				<control type="button" id="3">			<!--Button Sort-->					
+					<width>477</width>
+					<align>left</align>					
+				</control>		
+				<control type="button" id="8">			<!--Button Search-->	
+					<width>477</width>
+					<align>left</align>
+					<label>137</label>									
+				</control>				
+				<control type="image" id="206">			<!--Space-->						
+					<width>477</width>					
+					<height>20</height>	
+					<align>left</align>	
+					<texture>common/menu_space.png</texture>				
+				</control>		
+				<control type="label" id="300">			<!--View:-->					
+					<width>477</width>
+					<align>left</align>	
+					<textoffsetx>50</textoffsetx>
+					<font>TitanBold40</font>
+					<label>$LOCALIZE[457]</label>
+					<textcolor>TitanBlack</textcolor>						
+				</control>	
+				<control type="image" id="301">			<!--Separator-->						
+					<width>477</width>					
+					<height>20</height>	
+					<align>left</align>	
+					<texture>common/menu_separator.png</texture>				
+				</control>	
+				<control type="button" id="302">		<!--View List-->				
+					<width>477</width>
+					<align>left</align>		
+					<label>List</label>					
+					<onclick>Container.SetViewMode(50)</onclick>
+					<onfocus>Skin.Reset(OtherView)</onfocus>					
+				</control>
+			</control>			
+		</control>
+		
+	</controls>
+
+</window>

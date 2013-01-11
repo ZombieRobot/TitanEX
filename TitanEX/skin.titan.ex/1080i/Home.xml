@@ -1,0 +1,244 @@
+<!--Titan-->
+<window id="0">
+	<defaultcontrol always="true">300</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>		
+		
+		<!--Global Background-->
+		<include>GlobalBackground</include>			
+		<!--Common Clock-->			
+		<include>Common_Clock</include>	
+		<!--Header Home-->	
+		<include>Header_Home</include>
+		<!--Now Playing Video-->
+		<include>NowPlayingVideo</include>	
+		<!--Now Playing Music-->
+		<include>NowPlayingMusic</include>	
+	
+		<!--RSS-->	
+		<control type="image">	
+			<include>animation_home_back</include>			
+			<posx>40</posx>
+			<posy>944</posy>
+			<width>1840</width>
+			<height>84</height>
+			<fadetime>200</fadetime>			
+			<texture>home_rss.png</texture>
+			<aspectratio align="center" aligny="center">stretch</aspectratio>							
+		</control>		
+		
+		<!--Shutdown-->
+		<control type="group">
+			<include>animation_home</include>
+			<posy>-15</posy>
+
+			<control type="image">		<!--Shutdown Button Glow-->	
+				<visible>Control.HasFocus(310)</visible>
+				<animation type="visible">
+					<effect type="zoom" start="100" end="110" time="300" center="auto" delay="0" tween="cubic" easing="inout"/>	
+					<effect type="fade" time="400"/>
+				</animation>	
+				<posx>884.5</posx>
+				<posy>840</posy>
+				<width>150</width>			
+				<height>150</height>			
+				<texture>home/home_shutdown_glow.png</texture>	
+			</control>
+			<control type="image">				<!--Shutdown Button-->	
+				<animation type="Conditional" condition="Control.HasFocus(310)">
+					<effect type="zoom" start="100" end="110" time="300" center="auto" delay="0" tween="cubic" easing="inout"/>		
+				</animation>			
+				<posx>885</posx>
+				<posy>835</posy>
+				<width>150</width>			
+				<height>150</height>
+				<fadetime>600</fadetime>
+				<texture>home/home_shutdown.png</texture>	
+			</control>		
+			<control type="button" id="310">	<!--Hidden Button-->			
+				<posx>885</posx>
+				<posy>835</posy>
+				<width>150</width>			
+				<height>150</height>
+				<font>-</font>
+				<textcolor>-</textcolor>
+				<focusedcolor>-</focusedcolor>					
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<label>-</label>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onup>300</onup>
+				<ondown>-</ondown>
+				<onclick>ShutDown</onclick>
+			</control>
+		</control>
+		
+		<!--List 300-->
+		<control type="panel" id="300">	
+			<include>animation_home</include>
+			<posx>30</posx>
+			<posy>305</posy>
+			<width>1860</width>
+			<height>600</height>
+			<onup>300</onup>
+			<ondown>310</ondown>
+			<onleft>300</onleft>
+			<onright>300</onright>
+			<orientation>horizontal</orientation>
+			<focusposition>-</focusposition>
+			<scrolltime tween="cubic" easing="inout">500</scrolltime>
+
+			<itemlayout width="620" height="265">
+				<control type="image"><!--Button-->				
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>623</width>
+					<height>271</height>					
+					<texture>$INFO[ListItem.Icon]</texture>			
+				</control>		
+				<control type="image"><!--Button Ovelay-->				
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>623</width>
+					<height>271</height>					
+					<texture>home/home_overlay.png</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+				<control type="label"><!--Label-->
+					<posx>315</posx>
+					<posy>165</posy>
+					<width>600</width>
+					<height>100</height>
+					<align>center</align>
+					<info>ListItem.Label</info>
+					<font>TitanLight52</font>
+					<textcolor>TitanWhite</textcolor>					
+				</control>
+			</itemlayout>
+			<focusedlayout width="620" height="265">
+				<control type="group">
+					<animation type="Focus" >				
+						<effect type="zoom" start="100" end="106" time="300" center="auto" delay="0" tween="cubic" easing="inout"/>			
+					</animation>
+					<animation type="UnFocus" >				
+						<effect type="zoom" start="106" end="100" time="300" center="auto" delay="0" tween="cubic" easing="inout"/>			
+					</animation>
+					<control type="image"><!--Button Glow-->
+						<animation type="UnFocus" >				
+							<effect type="fade" start="100" end="0" time="300" center="auto" delay="0" tween="cubic" easing="inout"/>			
+						</animation>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>623</width>
+						<height>271</height>						
+						<texture>home/home_glow.png</texture>	
+						<aspectratio>keep</aspectratio>
+						<visible>!Skin.HasSetting(bg_change)</visible>
+					</control>	
+					<control type="image"><!--Button Glow-->
+						<animation type="UnFocus" >				
+							<effect type="fade" start="100" end="0" time="300" center="auto" delay="0" tween="cubic" easing="inout"/>			
+						</animation>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>623</width>
+						<height>271</height>						
+						<texture>home/home_glow1.png</texture>	
+						<aspectratio>keep</aspectratio>
+						<visible>Skin.HasSetting(bg_change)</visible>
+					</control>	
+					<control type="image"><!--Button-->				
+						<posx>0</posx>
+						<posy>0</posy>						
+						<width>623</width>
+						<height>271</height>		
+						<texture>$INFO[ListItem.Icon]</texture>			
+					</control>
+					<control type="image"><!--Button Ovelay-->				
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>623</width>
+						<height>271</height>						
+						<texture>home/home_overlay.png</texture>	
+						<aspectratio>keep</aspectratio>
+					</control>	
+					<control type="label"><!--Label-->
+						<posx>315</posx>
+						<posy>165</posy>
+						<width>600</width>
+						<height>100</height>
+						<align>center</align>
+						<info>ListItem.Label</info>
+						<font>TitanLight52</font>
+						<textcolor>TitanWhite</textcolor>					
+					</control>
+				</control>
+			</focusedlayout>
+
+			<content>
+				<item id="2"><!--Music-->					
+					<icon>home/home_music.png</icon>	
+					<label>2</label>
+					<onclick>ActivateWindow(Music)</onclick>
+				</item>
+				<item id="1"><!--Videos-->								
+					<icon>home/home_videos.png</icon>	
+					<label>3</label>
+					<onclick>ActivateWindow(Video,root)</onclick>
+				</item>			
+				<item id="4"><!--Movies-->					
+					<icon>home/home_movies.png</icon>	
+					<label>342</label>
+					<onclick>ActivateWindow(Video,movietitles,return)</onclick>
+					<visible>Library.HasContent(Movies)</visible>
+				</item>
+				<item id="5"><!--TV Shows-->					
+					<icon>home/home_tvshows.png</icon>	
+					<label>20343</label>
+					<onclick>ActivateWindow(Video,tvshowtitles,return)</onclick>
+					<visible>Library.HasContent(TVShows)</visible>
+				</item>		
+				<item id="8"><!--Video Addons-->					
+					<label>Video-Addons</label>					
+					<icon>home/home_videoaddons.png</icon>							
+					<onclick>ActivateWindow(Video,addons,return)</onclick>
+					<visible>!Skin.HasSetting(HomeMenuNoVideoAddonsButton)</visible>
+				</item>						
+				<item id="6"><!--Weather-->					
+					<icon>home/home_weather.png</icon>	
+					<label>24027</label>
+					<onclick>ActivateWindow(weather)</onclick>
+				</item>					
+				<item id="3"><!--Pictures-->					
+					<icon>home/home_pictures.png</icon>	
+					<label>1</label>
+					<onclick>ActivateWindow(Pictures)</onclick>
+				</item>	
+				<item id="7"><!--Settings-->					
+					<icon>home/home_settings.png</icon>	
+					<label>5</label>
+					<onclick>ActivateWindow(settings)</onclick>
+				</item>							
+			</content>
+
+		</control>
+
+		<!--RSS Text-->
+		<control type="rss">	
+			<include>animation_home_back</include>		
+			<posx>120</posx>
+			<posy>982</posy>
+			<width>1680</width>
+			<height>50</height>
+			<font>TitanLight35</font>
+			<urlset>1</urlset>
+			<titlecolor>TitanBlack</titlecolor>
+			<headlinecolor>TitanBlack</headlinecolor>
+			<textcolor>TitanBlack</textcolor>
+			<scrollspeed>40</scrollspeed>					
+		</control>	
+		
+	</controls>
+
+</window>

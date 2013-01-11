@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon
+	id="skin.titan.ex"
+	version="0.1.6"
+	name="Titan EX"
+	provider-name="ZombieRobot">
+	<requires>
+		<import version="4.0.0" addon="xbmc.gui"/> 
+	</requires>
+	<extension
+    point="xbmc.gui.skin"
+    defaultthemename="textures.xbt"
+    debugging="false"
+    effectslowdown="0.75">		
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="1080i" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary>Titan EX is my take on the Mediaportal skin Titan</summary>
+		<description>Titan EX based off a Skin from the awesome opensource media center software Mediaportal</description>
+	</extension>
+</addon>

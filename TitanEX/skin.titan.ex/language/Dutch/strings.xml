@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<strings>
+
+	<!--New Strings-->
+		<string id="41000">Foto's</string>
+		<string id="41001">Muziek</string>
+		<string id="41002">Films</string>
+		<string id="41003">TV Shows</string>
+		<string id="41004">Video-Addons</string>
+		<string id="41005">Weer</string>
+		<string id="41006">Instellingen</string>
+		<string id="41007">Afsluiten</string>
+		<string id="41008">Speel Disc</string>
+		
+		<string id="41009">Vandaag</string>
+		
+		<string id="41010">Laatst toegevoegd</string>
+		
+		<string id="41011">Nieuwe Films</string>
+		<string id="41012">Genre</string>
+		<string id="41013">Jaar</string>
+		<string id="41014">Acteurs</string>
+		<string id="41015">Directeur</string>
+		<string id="41016">Afspeellijsten</string>
+		<string id="41017">Muziek Video's</string>
+		
+		<string id="41018">Nieuwe Afleveringen</string>
+		
+		<string id="41019">Muziek-Addons</string>
+		<string id="41020">Nieuwe Albums</string>
+		<string id="41021">Artiesten</string>
+		<string id="41022">Liedjes</string>
+		<string id="41023">Bibliotheek</string>
+		
+		<string id="41025">Bestand modes</string>
+		<string id="41026">Addons</string>
+		<string id="41027">Programma's</string>
+		<string id="41028">Favorieten</string>
+		
+		<string id="41030">Premiere</string>
+		<string id="41031">Tijdsduur</string>
+		<string id="41032">Waardering</string>
+		<string id="41033">Niet bekeken afleveringen</string>
+		<string id="41034">Premiere</string>
+		
+		<string id="41035">Wind</string>
+		<string id="41037">UV-Index</string>
+		<string id="41038">Dauwpunt</string>
+	
+		<string id="41039">Niet bekeken</string>
+		
+		<string id="41070">Enkele Afbeelding</string>
+		<string id="41071">Meerdere Afbeeldingen</string>
+		<string id="41072">Standaard</string>
+		<string id="41073">Verander Achtergrond</string>
+		
+		<string id="41080">Verander Achtergrond</string>
+		<string id="41081">Menu Uitzetten</string>
+		
+		<string id="41090">Menu</string>
+		<string id="41091">Scroll Info-Plot</string>
+		<string id="41092">Zoeken op Youtube</string>
+		
+		<string id="41100">Film Widget</string>
+		<string id="41101">TV Show Widget</string>		
+		<string id="41102">Album Widget</string>		
+		
+	
+	<!--Org Stings-->
+		<string id="31000">Afgelopen om</string>
+		<string id="31001">Bestand Mode</string>
+		<string id="31002">Programma's</string>
+		<string id="31003">Video's</string>
+		<string id="31004">Muziek</string>
+		<string id="31005">Afbeeldingen</string>
+		<string id="31006">Films</string>
+		<string id="31007">TV Shows</string>
+		<string id="31008">Favorieten</string>
+		<string id="31009">Profielen</string>
+		<string id="31010">Weer</string>
+		<string id="31011">Bestand Beheer</string>
+		<string id="31012">Instellingen</string>
+		<string id="31013">Afsluiten</string>
+		<string id="31014">Speel DISC</string>
+		<string id="31015">Speler Instellingen</string>
+		<string id="31016">Achtergrond Visuals</string>
+		<string id="31017">Lyrics/Ondertitels</string>
+		<string id="31018">Nu Geselecteerd</string>
+		<string id="31019">Open Afspeellijst</string>
+		<string id="31020">Bewaar Afspeellijst</string>
+		<string id="31021">Sluit Afspeellijst</string>
+		<string id="31022">Systeem Muziek Bestanden</string>
+		<string id="31023">Uitschakelen Achtergrond Visualiser</string>
+		<string id="31024">Uitschakelen Achtergrond Video</string>
+		<string id="31025">Klik om standaard Lyrics script te veranderen</string>
+		<string id="31026">Klik om standaard Ondertitel script te veranderen</string>
+		<string id="31027">Items</string>
+		<string id="31028">Pagina</string>
+		<string id="31029">Huidige afspeellijst</string>
+		<string id="31030">Gebruikt geheugen</string>
+		<string id="31031">Karaoke Tekst Instelling</string>
+		<string id="31032">Visualization Instellingen</string>
+		<string id="31033">Debug</string>
+		<string id="31034">Enable Debug Grid</string>
+		<string id="31035">Disable Debug Info</string>
+		<string id="31036">Terug</string>
+		<string id="31037">Pauze</string>
+		<string id="31038">Stop</string>
+		<string id="31039">Snel Vooruit</string>
+		<string id="31040">Visualisation Instellingen</string>
+		<string id="31041">DVD Menu</string>
+		  
+	<!-- Description Labels  -->
+		<string id="31400">[B]CONFIGUREER INSTELLINGEN UITERLIJK [/B][CR][CR][COLOR=White]Verander de skin · Instellen land en regio opties · Verander bestand instellingen[CR]Instellingen schermbeveiliging[/COLOR]</string>
+		<string id="31401">[B]CONFIGUREER VIDEO INSTELLINGEN[/B][CR][CR][COLOR=White]Beheer video bibliotheek · Instellen video afspeelopties · Verander video lijst opties [CR]Instellen lettertype ondertiteling[/COLOR]</string>
+		<string id="31402">[B]CONFIGUREER MUZIEK INSTELLINGEN[/B][CR][CR][COLOR=White]Beheer muziek bibliotheek · Instellen muziek afspeelopties · Verander muziek lijst opties [CR]Instellen liedjes indeling · Instellen karaoke opties[/COLOR]</string>
+		<string id="31403">[B]CONFIGUREER AFBEELINGEN INSTELLINGEN [/B][CR][CR][COLOR=White]Beheer afbeeldingen bibliotheek · Configureer diashows[/COLOR]</string>
+		<string id="31404">[B]CONFIGUREER WEER INSTELLINGEN[/B][CR][CR][COLOR=White]Beheer van drie steden de weer informatie [/COLOR]</string>
+		<string id="31405">[B]CONFIGUREER NETWERK INSTELLINGEN[/B][CR][CR][COLOR=White]Beheer XBMC via UPnP and HTTP · Configureer bestanddeling[CR]Beheer internet opties[/COLOR]</string>
+		<string id="31406">[B]CONFIGUREER SYSTEEM INSTELLINGEN[/B][CR][CR][COLOR=White]Beheer en calibreer beeldscherm · Configureer audio instellingen · Beheer afstandsbedieningen[CR]Beheer energie bespaar opties · Enable debugging · Beheer master lock[/COLOR]</string>
+		<string id="31407">[B]CONFIGUREER SKIN INSTELLINGEN[/B][CR][CR][COLOR=White]Beheer de Avalon skin · Beheer home menu items[CR]Verander skin achtergronden[/COLOR]</string>
+		<string id="31408">[B]CONFIGUREER ADD-ONS[/B][CR][CR][COLOR=White]Beheer geinstalleerde Add-ons · Zoeken en installeren Add-ons van xbmc.org[CR]Wijzigen Add-on Instellingen[/COLOR]</string>
+		<string id="31409">[B]SYSTEEM INFORMATIE[/B][CR][CR][COLOR=White]Samenvatting · Opslag · Netwerk · Video · Hardware[/COLOR]</string>
+		<string id="31421">[B]SELECEER JOU XBMC GEBRUIKERS PROFIEL[/B][CR][CR][COLOR=White]Inloggen[/COLOR]</string>
+	
+
+</strings>

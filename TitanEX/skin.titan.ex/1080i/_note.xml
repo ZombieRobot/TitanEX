@@ -1,0 +1,45 @@
+Home
+Includes
+MyVideoNav
+MyMusicNav
+View_50_List
+Defaults 					(Color)
+Defaults					(Button,Label..)
+DialogSeekbar				(Playback Play/Pause/FF..)
+DialogFullScreenInfo		(Playback Info)
+VideoOSD
+VideoOSDSettings			
+DialogBusy					Beschäftigt
+VideoOverlay				(wird gespielt / deakt.)
+MusicOverlay				(wird gespielt / deakt.)
+IncludesNowPlaying		
+DialogExtendedProcessBar	Scan Library 
+DialogVideoInfo
+DialogProgress				gleich wie Dialog Bussy (mit Info für Artworkdownloader muss aber noch editiert werden)
+DialogSelect				Actorsuche und Skinwechsel
+IncludeNowPlaying
+DialogKaiToast				Hello World
+DialogVolumeBar
+DialogMuteBug
+MyWeather
+MyMusicSongs
+MyMusicPlaylist
+DialogKeyboard
+
+
+0.0.9						Overlays sortiert, VolumeBar erstellt, Headerlabel auf weite 400, Wetter erstellt, RSS
+0.1.0						Farben angepasst, Datum angepasst, in Settings.xml Titan Version eingefügt
+0.1.1						Fanart und Farbdesign geändert, Shutdownbutton positioniert, Home_panel gegen RSS getauscht, Global Overlay hinzugefügt.
+0.1.2						Bugfix Rating
+0.1.3						Fanart Overlay für Weather, Icon Wetaher Header, Schrift Home-Menü kleiner
+0.1.4						MyMusicSongs, MyMusicPlaylist, keyboard (begonnen eventuell noch mot anderen Umschalttasten, Return...)
+0.1.5						Overlays umsortiert, neue Ordner: scan, nowplaying. DialogKaiToast.xml kleiner und on top. 
+							DialogKaiTost immer an, DialogExtendedProgressBar nur wenn DialogKaiTost nicht an, Now Playing nur an wenn
+							DialogKaiTost und DialogExtendedProgressBar nicht an.
+							DialogKaiTost bekommt fade bei wechsel von Home Menu in Music, Movies,.....
+							Rework Volumebar und Mute
+							MyPics.xml fertig.
+							Icons position Header optimiert
+							List_50 onright kein Sub-Menü öffnen
+0.1.6						DVD COver auf richtiges Seitenverhälniss 1,407. In List50, DialogSeekbar, DialogFullscreenInfo, VideoOSD 
+							Animation DialogExtendedProgressBar fade bei wechsel von Home Menu in Music, Movies,.....

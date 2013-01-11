@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<strings>
+
+
+	<!--New String-->
+		<string id="41000">Imágenes</string>
+		<string id="41001">Música</string>
+		<string id="41002">Películas</string>
+		<string id="41003">Series</string>
+		<string id="41004">Video-Addons</string>
+		<string id="41005">Clima</string>	
+		<string id="41006">Sistema</string>
+		<string id="41007">Apagar</string>
+		<string id="41008">Reproducir Disco</string>
+		
+		<string id="41009">Hoy</string>		
+		
+		<string id="41010">Añadido Recientemente</string>	
+
+		
+		<string id="41011">Películas Nuevas</string>	
+		<string id="41012">Género</string>
+		<string id="41013">Año</string>			
+		<string id="41014">Actores</string>	
+		<string id="41015">Director</string>
+		<string id="41016">Lista Reproducción</string>
+		<string id="41017">Videos Musicales</string>
+		
+		<string id="41018">Episodios Nuevos</string>
+		
+		<string id="41019">Music-Addons</string>
+		<string id="41020">Nuevos Albumes</string>
+		<string id="41021">Artista</string>
+		<string id="41022">Canciones</string>
+		<string id="41023">Biblioteca</string>
+		
+		<string id="41025">Explorador de ficheros</string>
+		<string id="41026">Addons</string>
+		<string id="41027">Programas</string>
+		<string id="41028">Favoritos</string>
+		
+		<string id="41030">Estreno</string>
+		<string id="41031">Duración</string>
+		<string id="41032">Valoración</string>
+		<string id="41033">Episodios no vistos</string>
+		<string id="41034">Estreno</string>
+		
+		<string id="41035">Viento</string>
+		<string id="41037">Índice UV</string>
+		<string id="41038">Punto de Rocío</string>
+	
+		<string id="41039">No visto</string>
+		
+		<string id="41070">Imagen única</string>
+		<string id="41071">Multi Imagen</string>
+		<string id="41072">Por Defecto</string>
+		<string id="41073">Cambiar Fondo</string>
+		
+		<string id="41080">Cambiar Fondo</string>
+		<string id="41081">Deshabilitar Menú</string>
+		
+		<string id="41090">Menú</string>
+		<string id="41091">Desplazamiento Argumento</string>
+		<string id="41092">Buscando en Youtube</string>
+		
+		<string id="41100">Películas Widget</string>
+		<string id="41101">Series Widget</string>		
+		<string id="41102">Albumes Widget</string>
+		<string id="41103">Qlock Widget</string>
+		
+		
+		<string id="41110">Nuevo en XBMC ...</string>		
+		<string id="41111">XBMC recomienda ...</string>		
+		
+	
+	<!--Org Strings-->
+		<string id="31000">Acaba</string>
+		<string id="31001">Modo Ficheros</string>
+		<string id="31002">PROGRAMAS</string>
+		<string id="31003">VIDEOS</string>
+		<string id="31004">MÚSICA</string>
+		<string id="31005">IMAGEN</string>
+		<string id="31006">PELÍCULAS</string>
+		<string id="31007">SERIES</string>
+		<string id="31008">FAVORITOS</string>
+		<string id="31009">PERFILES</string>
+		<string id="31010">CLIMA</string>
+		<string id="31011">EXPLORADOR DE FICHEROS</string>
+		<string id="31012">SISTEMA</string>
+		<string id="31013">APAGAR</string>
+		<string id="31014">REPRODUCIR DISCO</string>
+		<string id="31015">Controles del Reproductor</string>
+		<string id="31016">Ver Fondos</string>
+		<string id="31017">Letras/Subtítulos</string>
+		<string id="31018">Seleccionado actualmente</string>
+		<string id="31019">Abrir Lista de Reproducción</string>
+		<string id="31020">Salvar lista de Reproducción</string>
+		<string id="31021">Cerrar lista de Reproducción</string>
+		<string id="31022">Ficheros musicales del sistema</string>
+		<string id="31023">deshabilitar visor de fondos</string>
+		<string id="31024">Deshabilitar video de fondo</string>
+		<string id="31025">Click script de Letras por defecto</string>
+		<string id="31026">Click script de subtítulos por defecto</string>
+		<string id="31027">Items</string>
+		<string id="31028">Página</string>
+		<string id="31029">Lista Actual</string>
+		<string id="31030">Memoria usada</string>
+		<string id="31031">Selector Karaoke de canción</string>
+		<string id="31032">Preselecciones de Visualización</string>
+		<string id="31033">Debug</string>
+		<string id="31034">Habilitar cuadrícula Debug</string>
+		<string id="31035">Deshabilitar cuadrícula Debug info</string>
+		<string id="31036">Rebobinar</string>
+		<string id="31037">Pausa</string>
+		<string id="31038">Stop</string>
+		<string id="31039">Avance rápido</string>
+		<string id="31040">Preselecciones de Visualización</string>
+		<string id="31041">Menú DVD</string>
+		  
+	<!-- Description Labels  -->
+		<string id="31400">[B]CONFIGURAR OPCIONES DE APARIENCIA[/B][CR][CR][COLOR=White]Cambia la Skin · Cambia Idioma y Región · Cambia Opciones de listado de ficheros[CR]Activar Salvapantallas[/COLOR]</string>
+		<string id="31401">[B]CONFIGURAR OPCIONES DE VIDEO[/B][CR][CR][COLOR=White]Gestiona tu Biblioteca de video · Cambia opciones de reproducción · Cambia opciones de lista de video[CR]Cambia fuentes de subtítulos[/COLOR]</string>
+		<string id="31402">[B]CONFIGURAR OPCIONES DE MÚSICA[/B][CR][CR][COLOR=White]Gestiona tu biblioteca de música · Cambia opciones de reproducción de música · Cambia opciones de lista de música[CR]Habilita envío de canción · Cambia opciones de Karaoke[/COLOR]</string>
+		<string id="31403">[B]CONFIGURAR OPCIONES DE IMAGEN[/B][CR][CR][COLOR=White]Cambiar opciones de lista de imágenes · Configurar pases de diapósitivas[/COLOR]</string>
+		<string id="31404">[B]CONFIGURAR OPCIONES DE CLIMA[/B][CR][CR][COLOR=White]Especifique tres ciudades para obtener clima[/COLOR]</string>
+		<string id="31405">[B]CONFIGURAR OPCIONES DE RED[/B][CR][CR][COLOR=White]Control de XBMC vía UPnP y HTTP · Configurar archivos compartidos[CR]Cambiar opciones de acceso a internet[/COLOR]</string>
+		<string id="31406">[B]CONFIGURAR OPCIONES DEL SISTEMA[/B][CR][CR][COLOR=White]Habilitar y Calibrar pantallas · Configurar salida de audio · Habilitar Control remoto[CR]Cambiar Opciones de Ahorro de energía · Habilitar Debugging · Habilitar Contraseña maestra[/COLOR]</string>
+		<string id="31407">[B]CONFIGURAR OPCIONES DE SKIN[/B][CR][CR][COLOR=White]Configurar Avalon · Agregar/Quitar items Menú Principal[CR]Cambiar Fondos de la Skin[/COLOR]</string>
+		<string id="31408">[B]CONFIGURAR ADD-ONS[/B][CR][CR][COLOR=White]Gestionar Add-ons instalados · Buscar e Instalar Add-ons de xbmc.org[CR]Modificar opciones de Add-ons[/COLOR]</string>
+		<string id="31409">[B]INFORMACIÓN DEL SISTEMA[/B][CR][CR][COLOR=White]Resumen · Almacenamiento · Red · Video · Hardware[/COLOR]</string>
+		<string id="31421">[B]SELECCIONAR PERFIL DE USUARIO[/B][CR][CR][COLOR=White]para acceder y continuar[/COLOR]</string>
+		  
+
+	<!-- Qlock -->	
+
+		<!--Row 1-->
+		<string id="50000">E</string>
+		<string id="50001">S</string>
+		<string id="50002">O</string>
+		<string id="50003">N</string>
+		<string id="50004">E</string>
+		<string id="50005">L</string>
+		<string id="50006">A</string>
+		<string id="50007">S</string>
+		<string id="50008">U</string>
+		<string id="50009">N</string>
+		<string id="50010">A</string>
+		<!--Row 2-->
+		<string id="50011">D</string>
+		<string id="50012">O</string>
+		<string id="50013">S</string>
+		<string id="50014">I</string>
+		<string id="50015">T</string>
+		<string id="50016">R</string>
+		<string id="50017">E</string>
+		<string id="50018">S</string>
+		<string id="50019">O</string>
+		<string id="50020">R</string>
+		<string id="50021">E</string>
+		<!--Row 3-->
+		<string id="50022">C</string>
+		<string id="50023">U</string>
+		<string id="50024">A</string>
+		<string id="50025">T</string>
+		<string id="50026">R</string>
+		<string id="50027">O</string>
+		<string id="50028">C</string>
+		<string id="50029">I</string>
+		<string id="50030">N</string>
+		<string id="50031">C</string>
+		<string id="50032">O</string>
+		<!--Row 4-->
+		<string id="50033">S</string>
+		<string id="50034">E</string>
+		<string id="50035">I</string>
+		<string id="50036">S</string>
+		<string id="50037">A</string>
+		<string id="50038">S</string>
+		<string id="50039">I</string>
+		<string id="50040">E</string>
+		<string id="50041">T</string>
+		<string id="50042">E</string>
+		<string id="50043">N</string>
+		<!--Row 5-->
+		<string id="50044">O</string>
+		<string id="50045">C</string>
+		<string id="50046">H</string>
+		<string id="50047">O</string>
+		<string id="50048">N</string>
+		<string id="50049">U</string>
+		<string id="50050">E</string>
+		<string id="50051">V</string>
+		<string id="50052">E</string>
+		<string id="50053">Y</string>
+		<string id="50054">O</string>
+		<!--Row 6-->
+		<string id="50055">L</string>
+		<string id="50056">A</string>
+		<string id="50057">D</string>
+		<string id="50058">I</string>
+		<string id="50059">E</string>
+		<string id="50060">Z</string>
+		<string id="50061">S</string>
+		<string id="50062">O</string>
+		<string id="50063">N</string>
+		<string id="50064">C</string>
+		<string id="50065">E</string>
+		<!--Row 7-->
+		<string id="50066">D</string>
+		<string id="50067">O</string>
+		<string id="50068">C</string>
+		<string id="50069">E</string>
+		<string id="50070">L</string>
+		<string id="50071">Y</string>
+		<string id="50072">M</string>
+		<string id="50073">E</string>
+		<string id="50074">N</string>
+		<string id="50075">O</string>
+		<string id="50076">S</string>
+		<!--Row 8-->
+		<string id="50077">O</string>
+		<string id="50078">V</string>
+		<string id="50079">E</string>
+		<string id="50080">I</string>
+		<string id="50081">N</string>
+		<string id="50082">T</string>
+		<string id="50083">E</string>
+		<string id="50084">D</string>
+		<string id="50085">I</string>
+		<string id="50086">E</string>
+		<string id="50087">Z</string>
+		<!--Row 9-->
+		<string id="50088">V</string>
+		<string id="50089">E</string>
+		<string id="50090">I</string>
+		<string id="50091">N</string>
+		<string id="50092">T</string>
+		<string id="50093">I</string>
+		<string id="50094">C</string>
+		<string id="50095">I</string>
+		<string id="50096">N</string>
+		<string id="50097">C</string>
+		<string id="50098">O</string>
+		<!--Row 10-->
+		<string id="50099">M</string>
+		<string id="50100">E</string>
+		<string id="50101">D</string>
+		<string id="50102">I</string>
+		<string id="50103">A</string>
+		<string id="50104">C</string>
+		<string id="50105">U</string>
+		<string id="50106">A</string>
+		<string id="50107">R</string>
+		<string id="50108">T</string>
+		<string id="50109">O</string>	
+
+</strings>

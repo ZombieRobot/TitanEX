@@ -1,0 +1,551 @@
+<!--Titan-->
+<window id="2600">
+	<defaultcontrol always="true">2600</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>	
+		
+		<!--Global Background-->
+		<include>GlobalBackground</include>				
+		<!--Weather Overlay-->		
+		<control type="image">	
+			<animation effect="fade" time="600">WindowOpen</animation>		
+			<animation effect="fade" time="1000">WindowClose</animation>	
+			<include>animation_fade_visible_hidden</include>			
+			<include>Dimensions_Fullscreen</include>
+			<fadetime>600</fadetime>				
+			<texture background="true">overlays/fanart/overlay_weather.png</texture>				
+		</control>	
+		<!--Header Weather-->	
+		<include>Header_Weather</include>
+		<!--Common Clock-->	
+		<include>Common_Clock</include>		
+		<!--Music_NowPlaying-->			
+		<include>NowPlayingMusic</include>		
+		<!--Video_NowPlaying-->			
+		<include>NowPlayingVideo</include>	
+		
+		<control type="button" id="2600">
+			<texturefocus/>
+			<texturenofocus/>
+			<onleft>9000</onleft>
+			<onright></onright>
+			<onup></onup>
+			<ondown></ondown>
+			<onclick/>
+		</control>	
+		
+		<!--Start Weather-->			
+		<control type="image">	<!--RSS-->	
+			<include>animation_home_back</include>			
+			<posx>40</posx>
+			<posy>944</posy>
+			<width>1840</width>
+			<height>84</height>
+			<fadetime>200</fadetime>			
+			<texture>home_rss.png</texture>
+			<aspectratio align="center" aligny="center">stretch</aspectratio>							
+		</control>		
+		<control type="image">	<!--Separator-->
+			<include>animation_home_back</include>	
+			<posx>45</posx>
+			<posy>565</posy>
+			<width>1835</width>
+			<height>20</height>		
+			<fadetime>200</fadetime>	
+			<texture>common/separator.png</texture>			
+		</control>		
+		<control type="group">	<!--Weather Infos-->		
+			<include>animation_home</include>			
+			
+			<!--Location Label-->
+			<control type="label">
+				<posx>190</posx>
+				<posy>975</posy>
+				<width>600</width>
+				<height>50</height>					
+				<font>TitanBold35</font>
+				<textcolor>TitanBlack</textcolor>
+				<align>left</align>
+				<label>$INFO[Control.GetLabel(3)]</label>					
+				<visible>Weather.IsFetched</visible>	
+				<include>animation_fade_visible_hidden</include>
+			</control>
+			
+			<!--Weather Today-->
+			<control type="image"><!--Icon-->
+				<texture>$INFO[Window(Weather).Property(Current.FanartCode),weather/128x128/,.png]</texture>
+				<posx>180</posx>
+				<posy>270</posy>
+				<width>256</width>
+				<height>256</height>				
+				<visible>Weather.IsFetched</visible>
+				<include>animation_fade_visible_hidden</include>
+			</control>			
+			<control type="label"><!--Temp-->
+				<posx>520</posx>
+				<posy>335</posy>
+				<width>300</width>
+				<height>50</height>					
+				<font>TitanLight60</font>
+				<textcolor>TitanWhite</textcolor>
+				<align>left</align>
+				<label>$INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits][COLOR=TitanMain] / $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits][/COLOR]</label>
+				<visible>Weather.IsFetched</visible>
+				<include>animation_fade_visible_hidden</include>		
+			</control>	
+			<control type="label"><!--Outlook -->
+				<posx>520</posx>
+				<posy>405</posy>
+				<width>auto</width>
+				<height>50</height>					
+				<font>TitanBold60</font>
+				<textcolor>TitanMain</textcolor>
+				<align>left</align>
+				<info>Window.Property(Day0.Outlook)</info>
+				<visible>Weather.IsFetched</visible>
+				<include>animation_fade_visible_hidden</include>
+			</control>						
+			<control type="group"><!--Info-->
+				<posx>200</posx>
+				<posy>600</posy>				
+				
+				<!--Current Temperatur-->
+				<control type="label">
+					<label>$LOCALIZE[401]</label>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>400</width>
+					<height>50</height>					
+					<font>TitanLight35</font>					
+					<textcolor>TitanGrey</textcolor>
+					<align>left</align>						
+				</control>							
+				<control type="label">
+					<posx>200</posx>
+					<posy>0</posy>
+					<width>400</width>
+					<height>50</height>					
+					<font>TitanLight35</font>
+					<textcolor>TitanWhite</textcolor>
+					<align>left</align>
+					<label>$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits]</label>
+					<visible>Weather.IsFetched</visible>
+					<include>animation_fade_visible_hidden</include>				
+				</control>	
+				<!--Feels Like-->
+				<control type="label">
+					<label>$LOCALIZE[402]:</label>
+					<posx>0</posx>
+					<posy>40</posy><!--60-->
+					<width>400</width>
+					<height>50</height>
+					<font>TitanLight32</font>
+					<textcolor>TitanGrey</textcolor>
+					<align>left</align>						
+				</control>
+				<control type="label">
+					<label>$INFO[Window.Property(Current.FeelsLike)]$INFO[System.TemperatureUnits]</label>
+					<posx>200</posx>
+					<posy>40</posy><!--60-->
+					<width>400</width>
+					<height>50</height>
+					<font>TitanLight32</font>					
+					<textcolor>TitanWhite</textcolor>					
+					<align>left</align>	
+					<visible>Weather.IsFetched</visible>
+					<include>animation_fade_visible_hidden</include>	
+				</control>
+				<!--Current Condition-->
+				<control type="label">
+					<label>$LOCALIZE[33020]</label>
+					<posx>0</posx>
+					<posy>150</posy>
+					<width>400</width>
+					<height>50</height>					
+					<font>TitanLight29</font>					
+					<textcolor>TitanGrey</textcolor>
+					<align>left</align>								
+				</control>				
+				<control type="label">					
+					<posx>200</posx>
+					<posy>150</posy>
+					<width>400</width>
+					<height>50</height>					
+					<font>TitanLight29</font>					
+					<textcolor>TitanWhite</textcolor>
+					<align>left</align>
+					<info>Window.Property(Current.Condition)</info>
+					<visible>Weather.IsFetched</visible>
+					<include>animation_fade_visible_hidden</include>
+				</control>			
+				<!--Humidity-->
+				<control type="label">
+					<label>406</label>
+					<posx>0</posx>
+					<posy>180</posy>
+					<width>400</width>
+					<height>50</height>
+					<font>TitanLight29</font>
+					<textcolor>TitanGrey</textcolor>
+					<align>left</align>				
+				</control>
+				<control type="label">
+					<label>$INFO[Window.Property(Current.Humidity)]</label>
+					<posx>200</posx>
+					<posy>180</posy>
+					<width>400</width>
+					<height>50</height>
+					<font>TitanLight29</font>
+					<textcolor>TitanWhite</textcolor>
+					<align>left</align>
+					<visible>Weather.IsFetched</visible>
+					<include>animation_fade_visible_hidden</include>
+				</control>
+				<!--UV Index-->
+				<control type="label">
+					<label>41037</label>
+					<posx>0</posx>
+					<posy>210</posy>
+					<width>400</width>
+					<height>50</height>
+					<font>TitanLight29</font>
+					<textcolor>TitanGrey</textcolor>
+					<align>left</align>					
+				</control>
+				<control type="label">
+					<label>$INFO[Window.Property(Current.UVIndex)]</label>
+					<posx>200</posx>
+					<posy>210</posy>
+					<width>400</width>
+					<height>50</height>
+					<font>TitanLight29</font>
+					<textcolor>TitanWhite</textcolor>
+					<align>left</align>
+					<visible>Weather.IsFetched</visible>
+					<include>animation_fade_visible_hidden</include>
+				</control>
+				<!--Dew Point-->
+				<control type="label">
+					<label>41038</label>
+					<posx>0</posx>
+					<posy>240</posy>
+					<width>400</width>
+					<height>50</height>
+					<font>TitanLight29</font>
+					<textcolor>TitanGrey</textcolor>
+					<align>left</align>					
+				</control>
+				<control type="label">
+					<label>$INFO[Window.Property(Current.DewPoint)]</label>
+					<posx>200</posx>
+					<posy>240</posy>
+					<width>400</width>
+					<height>50</height>
+					<font>TitanLight29</font>
+					<textcolor>TitanWhite</textcolor>
+					<align>left</align>	
+					<visible>Weather.IsFetched</visible>
+					<include>animation_fade_visible_hidden</include>
+				</control>				
+				<!--Wind-->
+				<control type="label">
+					<label>$LOCALIZE[41035]:</label>
+					<posx>0</posx>
+					<posy>270</posy>
+					<width>400</width>
+					<height>50</height>
+					<font>TitanLight29</font>
+					<textcolor>TitanGrey</textcolor>
+					<align>left</align>					
+				</control>				
+				<control type="label">
+					<label>$INFO[Window.Property(Current.Wind)]</label>
+					<posx>200</posx>
+					<posy>270</posy>
+					<width>400</width>
+					<height>50</height>
+					<font>TitanLight29</font>
+					<textcolor>TitanWhite</textcolor>
+					<align>left</align>		
+					<visible>Weather.IsFetched</visible>
+					<include>animation_fade_visible_hidden</include>
+				</control>
+			</control>	
+			
+			<!--Weather Week-->	
+			<control type="image"><!--Day 1 Icon -->
+				<texture>$INFO[Window(Weather).Property(Day1.FanartCode),weather/128x128/,.png]</texture>
+				<posx>890</posx>
+				<posy>660</posy>
+				<width>120</width>
+				<height>120</height>
+				<visible>Weather.IsFetched</visible>
+				<include>animation_fade_visible_hidden</include>				
+			</control>
+			<control type="label"><!--Day 1 Title-->
+				<posx>820</posx>
+				<posy>600</posy>
+				<width>250</width>
+				<height>50</height>					
+				<font>TitanBold40</font>
+				<textcolor>TitanWhite</textcolor>
+				<align>center</align>
+				<label>$INFO[Window(Weather).Property(Day1.Title)]</label>
+				<visible>Weather.IsFetched</visible>
+				<include>animation_fade_visible_hidden</include>	
+			</control>
+			<control type="label"><!--Day 1 Temp-High Low-->
+				<posx>820</posx>
+				<posy>800</posy>
+				<width>250</width>
+				<height>50</height>					
+				<font>TitanLight35</font>
+				<textcolor>TitanWhite</textcolor>
+				<align>center</align>
+				<label>$INFO[Window(Weather).Property(Day1.HighTemp)] $INFO[System.TemperatureUnits][COLOR=TitanMain] / $INFO[Window(Weather).Property(Day1.LowTemp)] $INFO[System.TemperatureUnits][/COLOR]</label>
+				<visible>Weather.IsFetched</visible>
+				<include>animation_fade_visible_hidden</include>		
+			</control>
+			<control type="label"><!--Day 1 Outlook -->
+				<posx>820</posx>
+				<posy>870</posy>
+				<width>250</width>
+				<height>50</height>					
+				<font>TitanBold30</font>
+				<textcolor>TitanMain</textcolor>
+				<align>center</align>
+				<info>Window.Property(Day1.Outlook)</info>
+				<visible>Weather.IsFetched</visible>
+				<include>animation_fade_visible_hidden</include>
+			</control>	
+			
+			<control type="image"><!--Day 2 Icon -->
+				<texture>$INFO[Window(Weather).Property(Day2.FanartCode),weather/128x128/,.png]</texture>
+				<posx>1150</posx>
+				<posy>660</posy>
+				<width>120</width>
+				<height>120</height>
+				<visible>Weather.IsFetched</visible>
+				<include>animation_fade_visible_hidden</include>
+			</control>
+			<control type="label"><!--Day 2 Title-->
+				<posx>1080</posx>
+				<posy>600</posy>
+				<width>250</width>
+				<height>50</height>					
+				<font>TitanBold40</font>
+				<textcolor>TitanWhite</textcolor>
+				<align>center</align>
+				<label>$INFO[Window(Weather).Property(Day2.Title)]</label>
+				<visible>Weather.IsFetched</visible>
+				<include>animation_fade_visible_hidden</include>		
+			</control>				
+			<control type="label"><!--Day 2 Temp-High Low-->
+				<posx>1080</posx>
+				<posy>800</posy>
+				<width>250</width>
+				<height>50</height>					
+				<font>TitanLight35</font>
+				<textcolor>TitanWhite</textcolor>
+				<align>center</align>
+				<label>$INFO[Window(Weather).Property(Day2.HighTemp)] $INFO[System.TemperatureUnits][COLOR=TitanMain] / $INFO[Window(Weather).Property(Day2.LowTemp)] $INFO[System.TemperatureUnits][/COLOR]</label>
+				<visible>Weather.IsFetched</visible>
+				<include>animation_fade_visible_hidden</include>		
+			</control>
+			<control type="label"><!--Day 2 Outlook -->
+				<posx>1080</posx>
+				<posy>870</posy>
+				<width>250</width>
+				<height>50</height>					
+				<font>TitanBold30</font>
+				<textcolor>TitanMain</textcolor>
+				<align>center</align>
+				<info>Window.Property(Day2.Outlook)</info>
+				<visible>Weather.IsFetched</visible>
+				<include>animation_fade_visible_hidden</include>			
+			</control>	
+			
+			<control type="image"><!--Day 3 Icon -->
+				<texture>$INFO[Window(Weather).Property(Day3.FanartCode),weather/128x128/,.png]</texture>
+				<posx>1410</posx>
+				<posy>660</posy>
+				<width>120</width>
+				<height>120</height>
+				<visible>Weather.IsFetched</visible>
+				<include>animation_fade_visible_hidden</include>
+			</control>
+			<control type="label"><!--Day 3 Title-->
+				<posx>1340</posx>
+				<posy>600</posy>
+				<width>250</width>
+				<height>50</height>					
+				<font>TitanBold40</font>
+				<textcolor>TitanWhite</textcolor>
+				<align>center</align>
+				<label>$INFO[Window(Weather).Property(Day3.Title)]</label>
+				<visible>Weather.IsFetched</visible>
+				<include>animation_fade_visible_hidden</include>	
+			</control>		
+			<control type="label"><!--Day 3 Temp-High Low-->
+				<posx>1340</posx>
+				<posy>800</posy>
+				<width>250</width>
+				<height>50</height>					
+				<font>TitanLight35</font>
+				<textcolor>TitanWhite</textcolor>
+				<align>center</align>
+				<label>$INFO[Window(Weather).Property(Day3.HighTemp)] $INFO[System.TemperatureUnits][COLOR=TitanMain] / $INFO[Window(Weather).Property(Day3.LowTemp)] $INFO[System.TemperatureUnits][/COLOR]</label>
+				<visible>Weather.IsFetched</visible>
+				<include>animation_fade_visible_hidden</include>		
+			</control>
+			<control type="label"><!--Day 3 Outlook -->
+				<posx>1340</posx>
+				<posy>870</posy>
+				<width>250</width>
+				<height>50</height>					
+				<font>TitanBold30</font>
+				<textcolor>TitanMain</textcolor>
+				<align>center</align>
+				<info>Window.Property(Day3.Outlook)</info>
+				<visible>Weather.IsFetched</visible>
+				<include>animation_fade_visible_hidden</include>	
+			</control>	
+			
+			<control type="image"><!--Day 4 Icon -->
+				<texture>$INFO[Window(Weather).Property(Day4.FanartCode),weather/128x128/,.png]</texture>
+				<posx>1670</posx>
+				<posy>660</posy>
+				<width>120</width>
+				<height>120</height>	
+				<visible>Weather.IsFetched</visible>
+				<include>animation_fade_visible_hidden</include>
+			</control>
+			<control type="label"><!--Day 4 Title-->
+				<posx>1600</posx>
+				<posy>600</posy>
+				<width>250</width>
+				<height>50</height>					
+				<font>TitanBold40</font>
+				<textcolor>TitanWhite</textcolor>
+				<align>center</align>
+				<label>$INFO[Window(Weather).Property(Day4.Title)]</label>
+				<visible>Weather.IsFetched</visible>
+				<include>animation_fade_visible_hidden</include>		
+			</control>	
+			<control type="label"><!--Day 4 Temp-High Low-->
+				<posx>1600</posx>
+				<posy>800</posy>
+				<width>250</width>
+				<height>50</height>					
+				<font>TitanLight35</font>
+				<textcolor>TitanWhite</textcolor>
+				<align>center</align>
+				<label>$INFO[Window(Weather).Property(Day4.HighTemp)] $INFO[System.TemperatureUnits][COLOR=TitanMain] / $INFO[Window(Weather).Property(Day4.LowTemp)] $INFO[System.TemperatureUnits][/COLOR]</label>
+				<visible>Weather.IsFetched</visible>
+				<include>animation_fade_visible_hidden</include>	
+			</control>
+			<control type="label"><!--Day 4 Outlook -->
+				<posx>1600</posx>
+				<posy>870</posy>
+				<width>250</width>
+				<height>50</height>					
+				<font>TitanBold30</font>
+				<textcolor>TitanMain</textcolor>
+				<align>center</align>
+				<info>Window.Property(Day4.Outlook)</info>
+				<visible>Weather.IsFetched</visible>
+				<include>animation_fade_visible_hidden</include>
+			</control>					
+
+		</control>
+		
+		<!--Start Sub Menu-->		
+		<control type="group">		
+			<include>animation_fade_open_close</include>
+			<include>animation_fade_visible_hidden</include>
+			<control type="image">				<!--Sub Menu Panel-->				
+				<posx>61</posx>
+				<posy>100</posy>
+				<width>600</width>
+				<height>890</height>
+				<texture>sub_menu.png</texture>						
+				<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
+					<effect type="slide" start="-50" end="-600" time="400" tween="cubic" easing="inout"/>				
+				</animation>
+			</control>
+			<control type="grouplist" id="9000"><!--Grouplist Button-->		
+				<posx>124</posx>
+				<posy>160</posy>
+				<width>500</width>
+				<height>900</height>
+				<itemgap>3</itemgap>
+				<onleft>2600</onleft>
+				<onright>2600</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<orientation>vertical</orientation>
+				<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
+					<effect type="slide" start="-50" end="-600" time="400" tween="cubic" easing="inout"/>						
+				</animation>	
+				
+				<!--Buttons-->
+				<control type="label" id="200">			<!--Label Menu-->					
+					<width>477</width>
+					<align>left</align>
+					<textoffsetx>50</textoffsetx>
+					<font>TitanBold40</font>
+					<label>$LOCALIZE[41090]:</label>	
+					<textcolor>TitanBlack</textcolor>										
+				</control>
+				<control type="image" id="201">			<!--Seperator-->						
+					<width>477</width>					
+					<height>20</height>	
+					<align>left</align>	
+					<texture>common/menu_separator.png</texture>			
+				</control>				
+				<control type="button" id="2">			<!--Refresh-->				
+					<label>477</label>
+					<width>470</width>
+					<align>left</align>				
+				</control>
+				<control type="button" id="4">			<!--Settings-->				
+					<label>5</label>
+					<width>477</width>
+					<align>left</align>
+					<onclick>ActivateWindow(weathersettings)</onclick>				
+				</control>
+				<control type="spincontrolex" id="3">	<!--Location Select-->		
+					<font>-</font>
+					<width>477</width>					
+				</control>
+				</control>
+			<control type="label">				<!--Location Label UnFocus-->			
+				<visible>!ControlGroup(9000).HasFocus(3)</visible>
+				<posx>162</posx>
+				<posy>375</posy>
+				<width>180</width>
+				<font>Titan32</font>
+				<textcolor>TitanDarkGrey</textcolor>
+				<label>$INFO[Control.GetLabel(3)]</label>				
+				<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
+					<effect type="slide" start="-50" end="-600" time="400" tween="cubic" easing="inout"/>						
+				</animation>	
+			</control>		
+			<control type="label">				<!--Location Label Focus-->			
+				<visible>ControlGroup(9000).HasFocus(3)</visible>
+				<posx>162</posx>
+				<posy>375</posy>
+				<width>180</width>
+				<font>Titan32</font>
+				<textcolor>TitanBlack</textcolor>
+				<label>$INFO[Control.GetLabel(3)]</label>				
+				<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
+					<effect type="slide" start="-50" end="-600" time="400" tween="cubic" easing="inout"/>						
+				</animation>	
+			</control>			
+		</control>		
+		
+	</controls>
+
+</window>

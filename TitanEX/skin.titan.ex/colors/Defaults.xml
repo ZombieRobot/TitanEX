@@ -1,0 +1,20 @@
+<colors>
+	<color name="Black">FF1b1b1b</color>
+	<color name="White">FFfffeff</color>
+	<color name="Red">FFFF0000</color>
+	<color name="Blue">FF0000FF</color>
+	<color name="Green">FF00FF00</color>	
+	
+	
+	<color name="OSDSeekbar">55FFFFFF</color>	<!--Play, Pause, FF, RW-->
+	<color name="Separator">BBFFFFFF</color>	<!--List Separator-->
+	<color name="FanartOverlay">55FFFFFF</color><!--List 50 Fanart-->		
+	
+	<color name="TitanMain">FF00b8ff</color>	
+	<color name="TitanList">DD00b8ff</color>
+	<color name="TitanGrey">FF797979</color>	
+	<color name="TitanDarkGrey">FF3b3b3b</color>
+	<color name="TitanBlack">FF1b1b1b</color>
+	<color name="TitanLightBlack">aa222222</color>
+	<color name="TitanWhite">FFfffeff</color>	
+</colors>

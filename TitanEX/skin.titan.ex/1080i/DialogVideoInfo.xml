@@ -1,0 +1,503 @@
+<!--Titan-->
+<window id="2003">
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+		
+	<controls>
+		<!--Global Overlay-->		
+		<control type="image">	<!--Fanart-->			
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1920</width> 
+			<height>1080</height>			
+			<texture background="true" fallback="backgrounds/global.png">$INFO[Listitem.Property(Fanart_Image)]</texture>	
+			<animation type="WindowOpen">
+                <effect type="fade" start="0" end="100" time="1000" tween="sine" easing="inout" />               
+            </animation>
+            <animation type="WindowClose">
+                <effect type="fade" start="100" end="0" time="1000" tween="sine" easing="inout" />               
+            </animation>			
+		</control>
+		<control type="image">	<!--Overlay Black-->			
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1920</width> 
+			<height>1080</height>					
+			<colordiffuse>FanartOverlay</colordiffuse>
+			<texture>common/black.png</texture>	
+			<animation type="WindowOpen">
+                <effect type="fade" start="0" end="100" time="1000" tween="sine" easing="inout" />               
+            </animation>
+            <animation type="WindowClose">
+                <effect type="fade" start="100" end="0" time="1000" tween="sine" easing="inout" />               
+            </animation>			
+		</control>
+		<control type="image">	<!--Overlay White-->			
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1920</width> 
+			<height>1080</height>
+			<colordiffuse>22ffffff</colordiffuse>
+			<texture>common/white.png</texture>			
+			<animation type="WindowOpen">
+                <effect type="fade" start="0" end="100" time="1000" tween="sine" easing="inout" />               
+            </animation>
+            <animation type="WindowClose">
+                <effect type="fade" start="100" end="0" time="1000" tween="sine" easing="inout" />               
+            </animation>			
+		</control>		
+		
+		<!--Start DialogVideoInfo-->		
+		<control type="group">
+			<visible>!Window.IsActive(filebrowser)</visible>
+			<visible>!Window.IsActive(selectdialog)</visible>
+			<posx>180</posx>
+			<posy>130</posy>			
+			<animation type="WindowOpen">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" easing="inout" />
+                <effect type="zoom" start="200" end="100" time="300" center="960,540" tween="sine" easing="inout" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />
+                <effect type="zoom" start="100" end="50" time="300" center="960,540" tween="sine" easing="inout" />
+            </animation>			
+			<animation type="Visible">
+                <effect delay="500" type="fade" start="0" end="100" time="300" tween="sine" easing="inout" />              
+            </animation>
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />               
+            </animation>
+
+			<!--List Main-->
+			<control type="grouplist" id="9000">
+				<posx>45</posx>
+				<posy>-55</posy>
+				<width>auto</width>
+				<height>120</height>
+				<itemgap>3</itemgap>
+				<onup>50</onup>
+				<ondown>50</ondown>
+				<onright>9000</onright>
+				<onleft>9000</onleft>
+				<orientation>horizontal</orientation>
+			
+				<control type="button" id ="101">	<!--Info-->							
+					<label>[B]$LOCALIZE[19033][/B]</label>					
+					<width>494</width>
+					<height>120</height>
+					<aligny>top</aligny>
+					<textoffsety>30</textoffsety>
+					<font>Titan32</font>
+					<textcolor>TitanGrey</textcolor>
+					<focusedcolor>TitanWhite</focusedcolor>					
+					<texturefocus>tab_left_focus.png</texturefocus>
+					<texturenofocus>tab_left_nofocus.png</texturenofocus>					
+				</control>					
+				<control type="button" id ="102">	<!--Plot/Cast--> 								
+					<label>[B]$LOCALIZE[206][/B]</label>					
+					<width>494</width>
+					<height>120</height>
+					<aligny>top</aligny>
+					<textoffsety>30</textoffsety>
+					<font>Titan32</font>
+					<textcolor>TitanGrey</textcolor>
+					<focusedcolor>TitanWhite</focusedcolor>
+					<texturefocus>tab_middle_focus.png</texturefocus>
+					<texturenofocus>tab_middle_nofocus.png</texturenofocus>							
+				</control>					
+				<control type="button" id="104">	<!--Edit-->					
+					<label>[B]$LOCALIZE[21435][/B]</label>
+					<width>494</width>
+					<height>120</height>
+					<aligny>top</aligny>
+					<textoffsety>30</textoffsety>
+					<font>Titan32</font>
+					<textcolor>TitanGrey</textcolor>
+					<focusedcolor>TitanWhite</focusedcolor>
+					<texturefocus>tab_right_focus.png</texturefocus>
+					<texturenofocus>tab_right_nofocus.png</texturenofocus>
+				</control>
+				
+			</control>
+			
+			<control type="image">		<!--Dialog Background-->
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1580</width>
+				<height>915</height>
+				<texture>dialog_media_info.png</texture>
+			</control>
+			<control type="image">		<!--Separator-->					
+				<posx>55</posx>
+				<posy>700</posy>
+				<width>1470</width>
+				<height>20</height>					
+				<texture>common/separator.png</texture>			
+			</control>			
+			<control type="grouplist">	<!--Flags-->		
+					<visible>Control.IsVisible(50)</visible>
+					<visible>[Container.Content(movies) | Container.Content(episodes)] + !ListItem.IsFolder</visible>							
+					<posx>150</posx>
+					<posy>720</posy>
+					<width>400</width>
+					<height>70</height>
+					<align>left</align>
+					<itemgap>30</itemgap>
+					<orientation>horizontal</orientation>
+					<usecontrolcoords>true</usecontrolcoords>					
+					
+					<control type="image">	<!--Video Resolution-->	
+						<posx>0</posx>
+						<posy>20</posy>
+						<width>78</width>
+						<height>35</height>	
+						<colordiffuse>55ffffff</colordiffuse>
+						<texture fallback="flags/default_resolution.png">$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>					
+					</control>		
+					<control type="image">	<!--VideoCode-->
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>100</width>
+						<height>70</height>	
+						<colordiffuse>55ffffff</colordiffuse>
+						<texture fallback="flags/default_video.png">$INFO[ListItem.VideoCodec,flags/videocodec/,.png]</texture>				
+					</control>				
+					<control type="image">	<!--Audio Codec-->
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>100</width>
+						<height>70</height>
+						<colordiffuse>55ffffff</colordiffuse>
+						<texture fallback="flags/default_sound.png">$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>					
+					</control>
+				</control>				
+			<control type="image">		<!--Rating Stars-->				
+					<posx>150</posx>
+					<posy>825</posy>
+					<width>270</width>
+					<height>25</height>	
+					<texture fallback="rating/stars/NA.png">$INFO[ListItem.Rating,rating/10stars/,.png]</texture>													
+				</control>
+			<control type="label">		<!--Rating Label-->							
+					<posx>450</posx>
+					<posy>809</posy> 		
+					<width>500</width>
+					<font>TitanBold35</font>			
+					<textcolor>TitanBlack</textcolor>
+					<label>$INFO[ListItem.Rating]</label>	
+				</control>
+			<control type="label">		<!--Path-->
+					<visible>Container.Content(movies) | Container.Content(episodes)</visible>
+					<posx>550</posx>
+					<posy>730</posy>		
+					<width>900</width>
+					<height>50</height>
+					<font>TitanLight30</font>			
+					<textcolor>TitanGrey</textcolor>
+					<label>$INFO[ListItem.Path,]$INFO[ListItem.FileName]</label>	
+				</control>
+			
+			<control type="group" id="102">	<!--TAB Cast-->		
+				<visible>ControlGroup(9000).HasFocus(102)</visible>
+				<control type="image">		<!--Poster--->		
+					<visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]</visible>
+					<posx>150</posx>
+					<posy>150</posy>
+					<width>320</width>
+					<height>450</height>
+					<fadetime>200</fadetime>			
+					<texture background="true" fallback="posterdefault.png" diffuse="postermatte.png">$INFO[ListItem.Icon]</texture>						
+				</control>	
+				<control type="image">		<!--Cover & Thumb--->	
+					<visible>[!Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes)]</visible>
+					<posx>150</posx>
+					<posy>150</posy>
+					<width>345</width>
+					<height>345</height>
+					<fadetime>200</fadetime>			
+					<texture background="true" fallback="coverdefault.png" diffuse="covermatte.png">$INFO[ListItem.Icon]</texture>
+					<aspectratio align="center" aligny="center">stretch</aspectratio>						
+				</control>		
+				<control type="image">		<!--Episodes Thumb--->	
+					<visible>Container.Content(episodes)</visible>
+					<posx>150</posx>
+					<posy>150</posy>
+					<width>320</width>
+					<height>450</height>
+					<fadetime>200</fadetime>		
+					<texture background="true" fallback="posterdefault.png" diffuse="postermatte.png">$INFO[ListItem.Art(tvshow.poster)]</texture>
+				</control>	
+				<control type="image">		<!--Actor-->										
+					<posx>1120</posx>
+					<posy>150</posy>
+					<width>320</width>
+					<height>450</height>
+					<texture background="true" fallback="posterdefault.png" diffuse="postermatte.png">$INFO[Container(50).ListItem.Icon]</texture>
+					<aspectratio align="left" aligny="top">keep</aspectratio>				
+				</control>				
+				<control type="list" id="50"><!--List-->					
+					<posx>520</posx>
+					<posy>130</posy>
+					<width>550</width>
+					<height>483</height> 
+					<onup>50</onup>
+					<ondown>50</ondown>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<orientation>vertical</orientation>
+					<scrolltime>200</scrolltime>
+					
+					<itemlayout height="60">					
+						<control type="label">
+							<posx>30</posx>
+							<width>550</width>
+							<font>Titan32</font>
+							<textcolor>TitanGrey</textcolor>								
+							<info>ListItem.Label</info>
+							<scrollspeed>30</scrollspeed>
+						</control>
+						<control type="image"><!--Separator-->			
+							<posx>0</posx>
+							<posy>56</posy>
+							<width>550</width>
+							<height>20</height>								
+							<colordiffuse>Separator</colordiffuse>
+							<colordiffuse>Separator</colordiffuse>
+							<texture>common/separator.png</texture>			
+						</control>
+					</itemlayout>
+					<focusedlayout height="60"><!--Slider-->
+						<control type="image">	
+							<visible>!Control.HasFocus(102)</visible><!--When TAB not focus (in Cast-List)-->
+							<posx>0</posx>					
+							<width>670</width>
+							<height>56</height>
+							<colordiffuse>88ffffff</colordiffuse>
+							<texture>view_50_slider.png</texture>					
+						</control>
+						<control type="label">
+							<visible>!Control.HasFocus(102)</visible><!--When TAB not focus (in Cast-List)-->
+							<posx>30</posx>
+							<width>550</width>
+							<font>Titan32</font>
+							<textcolor>TitanMain</textcolor>								
+							<info>ListItem.Label</info>
+							<scrollspeed>30</scrollspeed>
+						</control>
+						<control type="label">
+							<visible>Control.HasFocus(102)</visible><!--When TAB focus (not in Cast-List)-->
+							<posx>30</posx>
+							<width>550</width>
+							<font>Titan32</font>
+							<textcolor>TitanMain</textcolor>								
+							<info>ListItem.Label</info>
+							<scrollspeed>30</scrollspeed>
+						</control>
+						<control type="image"><!--Separator-->							
+							<posx>30</posx>
+							<posy>56</posy>
+							<width>550</width>
+							<height>20</height>								
+							<colordiffuse>Separator</colordiffuse>
+							<texture>common/separator.png</texture>			
+						</control>
+					</focusedlayout>					
+				</control>							
+			</control>	
+			<control type="group" id="101">	<!--TAB Info-->
+				<visible>ControlGroup(9000).HasFocus(101)</visible>				
+				<control type="label">		<!--Tiltle Movie-->
+					<visible>!Container.Content(episodes) + !Container.Content(tvshows)</visible>
+					<posx>550</posx>
+					<posy>100</posy>						
+					<width>900</width> 			
+					<font>TitanBold40</font>			
+					<textcolor>TitanMain</textcolor>			
+					<label>$INFO[ListItem.Label]</label>				
+				</control>	
+				<control type="label">		<!--Tiltle TV-Shows-->
+					<visible>Container.Content(tvshows)</visible>
+					<posx>550</posx>
+					<posy>130</posy>						
+					<width>720</width> 			
+					<font>TitanBold40</font>			
+					<textcolor>TitanMain</textcolor>		
+					<label>$INFO[ListItem.Label]</label>				
+				</control>	
+				<control type="label">		<!--Tiltle Episode-->
+					<visible>Container.Content(episodes)</visible>
+					<posx>150</posx>
+					<posy>130</posy>						
+					<width>720</width> 			
+					<font>TitanBold40</font>			
+					<textcolor>TitanMain</textcolor>			
+					<label>$INFO[ListItem.Label]</label>				
+				</control>	
+				<!--Text-->
+				<include>MovieDialogInfos</include>
+				<include>TVShowDialogInfos</include>
+				<control type="image">		<!--Poster--->		
+					<visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]</visible>
+					<posx>150</posx>
+					<posy>150</posy>
+					<width>320</width>
+					<height>450</height>
+					<fadetime>200</fadetime>			
+					<texture background="true" fallback="posterdefault.png" diffuse="postermatte.png">$INFO[ListItem.Icon]</texture>						
+				</control>	
+				<control type="image">		<!--Cover & Thumb--->	
+					<visible>[!Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes)]</visible>
+					<posx>150</posx>
+					<posy>150</posy>
+					<width>345</width>
+					<height>345</height>
+					<fadetime>200</fadetime>			
+					<texture background="true" fallback="coverdefault.png" diffuse="covermatte.png">$INFO[ListItem.Icon]</texture>
+					<aspectratio align="center" aligny="center">stretch</aspectratio>						
+				</control>	
+				<control type="image">		<!--Episodes-->	
+					<visible>Container.Content(episodes)</visible>
+					<posx>930</posx><!--940 right of textbox-->
+					<posy>130</posy>
+					<width>410</width>
+					<height>230</height>
+					<fadetime>200</fadetime>			
+					<texture background="true" diffuse="episodematte.png">$INFO[ListItem.Icon]</texture>			
+					<aspectratio align="center" aligny="center">stretch</aspectratio>
+				</control>
+			</control>
+			<control type="group" id="104">	<!--TAB Edit-->
+			<visible>ControlGroup(9000).HasFocus(104)</visible>					
+				<control type="image">	<!--Fanart Back-->		
+					<posx>500</posx>
+					<posy>120</posy>
+					<width>888</width> 
+					<height>500</height>					
+					<texture>common/black.png</texture>		
+				</control>		
+				<control type="image">	<!--Fanart-->			
+					<posx>500</posx>
+					<posy>120</posy>
+					<width>888</width> 
+					<height>500</height>					
+					<texture fallback="hover_videos.png">$INFO[Listitem.Property(Fanart_Image)]</texture>
+					<colordiffuse>aaffffff</colordiffuse>					
+				</control>	
+				<control type="image">	<!--Fanart White-->		
+					<posx>500</posx>
+					<posy>120</posy>
+					<width>888</width> 
+					<height>500</height>				
+					<texture>common/white.png</texture>
+					<colordiffuse>00ffffff</colordiffuse>			
+				</control>
+				<control type="image">	<!--Fanart Overlay-->		
+					<posx>500</posx>
+					<posy>120</posy>
+					<width>888</width> 
+					<height>500</height>				
+					<texture>overlays/fanart/overlay_gradient.png</texture>
+					<colordiffuse>EEffffff</colordiffuse>			
+				</control>		
+				<control type="image">	<!--Poster--->		
+					<visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]</visible>
+					<posx>535</posx>
+					<posy>150</posy>
+					<width>250</width>
+					<height>350</height>
+					<fadetime>200</fadetime>			
+					<texture background="true" fallback="posterdefault.png" diffuse="postermatte.png">$INFO[ListItem.Icon]</texture>						
+				</control>	
+				<control type="image">	<!--Cover & Thumb--->		
+					<visible>[!Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes)]</visible>
+					<posx>535</posx>
+					<posy>150</posy>
+					<width>345</width>
+					<height>345</height>
+					<fadetime>200</fadetime>			
+					<texture background="true" fallback="coverdefault.png" diffuse="covermatte.png">$INFO[ListItem.Icon]</texture>
+					<aspectratio align="center" aligny="center">stretch</aspectratio>						
+				</control>	
+				<control type="image">	<!--Episodes-->	
+					<visible>Container.Content(episodes)</visible>
+					<posx>530</posx>
+					<posy>150</posy>
+					<width>410</width>
+					<height>230</height>
+					<fadetime>200</fadetime>			
+					<texture background="true" diffuse="episodematte.png">$INFO[ListItem.Icon]</texture>			
+					<aspectratio align="center" aligny="center">stretch</aspectratio>
+				</control>				
+				<control type="grouplist" id="50">	<!--List 50-->	
+					<posx>150</posx>
+					<posy>150</posy>
+					<width>460</width>
+					<height>auto</height>
+					<itemgap>3</itemgap>
+					<onup>50</onup>
+					<ondown>50</ondown>
+					<onright>9000</onright>
+					<onleft>9000</onleft>
+					<orientation>vertial</orientation>
+				
+					<control type="button" id ="8">		<!--Play--> 											
+						<label>208</label>
+						<width>270</width>
+						<height>80</height>
+						<font>Titan25</font>		
+						<textcolor>Black</textcolor>
+						<focusedcolor>White</focusedcolor>
+						<disabledcolor>Grey</disabledcolor>
+						<texturefocus border="15">common/button-blue.png</texturefocus>
+						<texturenofocus border="15">common/button-clear.png</texturenofocus>		
+					</control>
+					<control type="button" id ="9">		<!--Resume--> 							
+						<label>13404</label>
+						<width>270</width>
+						<height>80</height>
+						<font>Titan25</font>		
+						<textcolor>TitanBlack</textcolor>
+						<focusedcolor>TitanBlack</focusedcolor>
+						<disabledcolor>TitanGrey</disabledcolor>
+						<texturefocus border="15">common/button-blue.png</texturefocus>
+						<texturenofocus border="15">common/button-clear.png</texturenofocus>	
+					</control>
+					<control type="button" id ="6">		<!--Refresh-->							
+						<label>184</label>
+						<width>270</width>
+						<height>80</height>
+						<font>Titan25</font>		
+						<textcolor>TitanBlack</textcolor>
+						<focusedcolor>TitanBlack</focusedcolor>
+						<disabledcolor>TitanGrey</disabledcolor>
+						<texturefocus border="15">common/button-blue.png</texturefocus>
+						<texturenofocus border="15">common/button-clear.png</texturenofocus>	
+					</control>
+					<control type="button" id ="10">	<!--Get Thumb-->							
+						<label>13405</label>
+						<width>270</width>
+						<height>80</height>
+						<font>Titan25</font>		
+						<textcolor>TitanBlack</textcolor>
+						<focusedcolor>TitanBlack</focusedcolor>
+						<disabledcolor>TitanGrey</disabledcolor>
+						<texturefocus border="15">common/button-blue.png</texturefocus>
+						<texturenofocus border="15">common/button-clear.png</texturenofocus>	
+					</control>
+					<control type="button" id="12">		<!--Fanart-->										
+						<label>20413</label>
+						<width>270</width>
+						<height>80</height>
+						<font>Titan25</font>		
+						<textcolor>TitanBlack</textcolor>
+						<focusedcolor>TitanBlack</focusedcolor>
+						<disabledcolor>TitanGrey</disabledcolor>
+						<texturefocus border="15">common/button-blue.png</texturefocus>
+						<texturenofocus border="15">common/button-clear.png</texturenofocus>								
+					</control>
+					
+				</control>			
+			</control>				
+		</control>
+</controls>
+</window>

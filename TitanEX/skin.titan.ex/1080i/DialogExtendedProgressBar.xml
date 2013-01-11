@@ -1,0 +1,77 @@
+<!--Titan-->
+<window id="133">
+	<defaultcontrol always="true">401</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>
+		
+		<control type="group">
+			<animation effect="fade" time="600" delay="800">Visible</animation> 
+			<animation effect="fade" time="200">Hidden</animation>
+			<animation effect="fade" time="600" delay="500">WindowOpen</animation>		
+			<animation effect="fade" time="600">WindowClose</animation>	
+			
+			<animation effect="slide" start="0" end="85" time="0" reversible="false" condition="Window.IsActive(home)">Conditional</animation>	
+			
+			<animation type="conditional" condition="Window.Next(home.xml)">		<!--Fade Home-->			
+				<effect type="fade" start="100" end="0" time="600"/>			
+			</animation>
+			<animation type="conditional" condition="Window.Next(myvideonav.xml)">	<!--Fade Videos-->				
+				<effect type="fade" start="100" end="0" time="600"/>			
+			</animation>
+			<animation type="conditional" condition="Window.Next(mymusicnav.xml)">	<!--Fade Music-->					
+				<effect type="fade" start="100" end="0" time="600"/>			
+			</animation>
+			<animation type="conditional" condition="Window.Next(myweathernav.xml)"><!--Fade Wetaher-->					
+				<effect type="fade" start="100" end="0" time="600"/>			
+			</animation>
+			<animation type="conditional" condition="Window.Next(settings.xml)">	<!--Fade Settings-->					
+				<effect type="fade" start="100" end="0" time="600"/>			
+			</animation>
+			<animation type="conditional" condition="Window.Next(mypics.xml)">		<!--Fade Pics-->					
+				<effect type="fade" start="100" end="0" time="600"/>			
+			</animation>
+			
+			<visible>!Window.IsActive(DialogKaiToast.xml)</visible>			
+			
+			<posx>570</posx>
+			<posy>0</posy>				
+
+			<control type="image">			<!--Panel-->		
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>633</width>
+				<height>238</height>			
+				<texture>overlays/scan/progress_panel.png</texture>
+			</control>
+			<control type="label" id="30">	<!--Header-->				
+				<posx>96</posx>
+				<posy>40</posy>
+				<width>400</width>
+				<align>left</align>
+				<font>Titan30</font>
+				<textcolor>TitanLightBlack</textcolor>
+				<label>-</label>
+			</control>
+			<control type="label" id="31">	<!--Current Directory Label-->					
+				<posx>96</posx>
+				<posy>72</posy>
+				<width>400</width>
+				<align>left</align>
+				<font>Titan28</font>
+				<textcolor>TitanLightBlack</textcolor>
+				<label>-</label>
+			</control>	
+			<control type="progress" id="32"><!--Process-->				
+				<posx>96</posx>
+				<posy>123</posy>
+				<width>445</width>			
+				<texturebg></texturebg>
+				<midtexture border="3">osd/ProgressMidSmall.png</midtexture>			
+			</control>	
+			
+		</control>
+		
+	</controls>
+
+</window>

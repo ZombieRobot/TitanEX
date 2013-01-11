@@ -1,0 +1,59 @@
+﻿<!--Titan-->
+<window id="106">
+	<defaultcontrol always="true">1000</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>	
+		
+		<!--Dim-->		
+		<include>Dim</include>
+		
+		<control type="group">			
+			<posx>560</posx>
+			<posy>100</posy>	
+			
+			<animation type="WindowOpen">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" easing="inout" />
+                <effect type="zoom" start="200" end="100" time="300" center="960,540" tween="sine" easing="inout" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />
+                <effect type="zoom" start="100" end="50" time="300" center="960,540" tween="sine" easing="inout" />
+            </animation>
+			
+			<control type="image">				<!--Menu Panel-->
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>631</width>
+				<height>850</height>
+				<colordiffuse>FFffffff</colordiffuse>
+				<texture flipx="true">context_menu.png</texture>				
+			</control>
+			<control type="button" id="9001">	<!--Label Menu-->	
+				<posx>65</posx>
+				<posy>75</posy>
+				<width>495</width>
+				<align>left</align>
+				<font>TitanBold40</font>
+				<label>$LOCALIZE[41090]:</label>	
+				<textcolor>Black</textcolor>				
+			</control>	
+			<control type="grouplist" id="996">	<!--Grouplist Button-->		
+				<posx>61</posx>
+				<posy>160</posy>
+				<width></width>
+				<align>left</align>
+				<height>600</height>
+				<itemgap>-</itemgap>
+				
+				<!--Buttons-->	
+				<control type="button" id="1000">					
+					<width>503</width>				
+					<align>left</align>					
+				</control>
+			</control>
+		</control>
+		
+	</controls>
+
+</window>
