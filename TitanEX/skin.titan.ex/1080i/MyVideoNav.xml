@@ -54,7 +54,7 @@
 				<include>animation_visible_hidden</include>
 				<include>Dimensions_Fullscreen</include>
 				<fadetime>1000</fadetime>
-				<texture background="true">fanart_overlay.png</texture>	
+				<texture background="true">overlays/fanart/overlay_global.png</texture>	
 				<aspectratio scalediffuse="false" align="right">scale</aspectratio>
 			</control>				
 		</control>		
