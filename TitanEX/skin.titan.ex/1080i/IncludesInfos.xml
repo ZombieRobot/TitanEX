@@ -26,7 +26,7 @@
 					<posy>0</posy> 					
 					<width>200</width>				
 					<font>TitanLight32</font>				
-					<textcolor>TitanGrey</textcolor>				
+					<textcolor>TitanMain</textcolor>				
 					<label>41030</label>				
 				</control>
 				<control type="label">
@@ -34,7 +34,7 @@
 					<posy>0</posy>						
 					<width>350</width>					
 					<font>TitanLight32</font>				
-					<textcolor>TitanGrey</textcolor>				
+					<textcolor>white</textcolor>				
 					<label>$INFO[ListItem.Year]</label>					
 				</control>
 				<control type="label">
@@ -43,7 +43,7 @@
 					<posy>0</posy>						
 					<width>350</width>					
 					<font>TitanLight32</font>				
-					<textcolor>TitanGrey</textcolor>				
+					<textcolor>white</textcolor>				
 					<label>...</label>					
 				</control>
 				<control type="label">	<!--Running Time-->					
@@ -51,7 +51,7 @@
 					<posy>35</posy>						
 					<width>200</width>				
 					<font>TitanLight32</font>				
-					<textcolor>TitanGrey</textcolor>
+					<textcolor>TitanMain</textcolor>
 					<label>41031</label>				
 				</control>
 				<control type="label">
@@ -60,7 +60,7 @@
 					<posy>35</posy>						
 					<width>350</width>				
 					<font>TitanLight32</font>				
-					<textcolor>TitanGrey</textcolor>				
+					<textcolor>white</textcolor>				
 					<label>$INFO[ListItem.Duration] min</label>				
 				</control>	
 				<control type="label">
@@ -69,7 +69,7 @@
 					<posy>35</posy>						
 					<width>350</width>				
 					<font>TitanLight32</font>				
-					<textcolor>TitanGrey</textcolor>				
+					<textcolor>white</textcolor>				
 					<label>...</label>				
 				</control>	
 				<control type="label">	<!--Genre-->					
@@ -77,7 +77,7 @@
 					<posy>70</posy>						
 					<width>200</width>				
 					<font>TitanLight32</font>				
-					<textcolor>TitanGrey</textcolor>
+					<textcolor>TitanMain</textcolor>
 					<label>41012</label>				
 				</control>
 				<control type="label">
@@ -85,7 +85,7 @@
 					<posy>70</posy>						
 					<width>350</width>			
 					<font>TitanLight32</font>				
-					<textcolor>TitanGrey</textcolor>				
+					<textcolor>white</textcolor>				
 					<label>$INFO[ListItem.Genre]</label>				
 				</control>	
 				<control type="label">
@@ -94,7 +94,7 @@
 					<posy>70</posy>						
 					<width>350</width>			
 					<font>TitanLight32</font>				
-					<textcolor>TitanGrey</textcolor>				
+					<textcolor>white</textcolor>				
 					<label>...</label>				
 				</control>	
 				<control type="label">	<!--Director-->					
@@ -102,7 +102,7 @@
 					<posy>105</posy>						
 					<width>200</width>		
 					<font>TitanLight32</font>				
-					<textcolor>TitanGrey</textcolor>
+					<textcolor>TitanMain</textcolor>
 					<label>41015</label>				
 				</control>			
 				<control type="label">
@@ -110,7 +110,7 @@
 					<posy>105</posy>						
 					<width>350</width>			
 					<font>TitanLight32</font>				
-					<textcolor>TitanGrey</textcolor>				
+					<textcolor>white</textcolor>				
 					<label>$INFO[ListItem.Director]</label>				
 				</control>	
 				<control type="label">
@@ -119,31 +119,39 @@
 					<posy>105</posy>						
 					<width>350</width>			
 					<font>TitanLight32</font>				
-					<textcolor>TitanGrey</textcolor>				
+					<textcolor>white</textcolor>				
 					<label>...</label>				
 				</control>	
 			</control>	
 			<control type="textbox"><!--Textbox-->
-					<visible>!Skin.HasSetting(ScrollInfo)</visible>
-					<posx>570</posx>
-					<posy>566</posy>	
-					<width>530</width>
-					<height>270</height>
-					<font>TitanLight32</font>				
-					<textcolor>TitanGrey</textcolor>
-					<align>justify</align>
-					<shadowcolor></shadowcolor> <!-- Shadow -->
-					<autoscroll>false</autoscroll>
-					<label>$INFO[ListItem.Plot]</label>				
-				</control>
+				<visible>!Skin.HasSetting(ScrollInfo)</visible>
+				<posx>570</posx>
+				<posy>566</posy>	
+				<width>530</width>
+				<height>270</height>
+				<font>TitanLight32</font>				
+				<textcolor>white</textcolor>
+				<align>justify</align>
+				<shadowcolor></shadowcolor> <!-- Shadow -->
+				<autoscroll>false</autoscroll>
+				<label>$INFO[ListItem.Plot]</label>				
+			</control>
 			<!--RSS Info-->
+			<control type="image">	<!--Star Rating-->						
+				<posx>570</posx>
+				<posy>331</posy>
+				<width>270</width>
+				<height>25</height>	
+				<texture fallback="rating/stars/NA.png">$INFO[ListItem.Rating,rating/10stars/,.png]</texture>	
+				<animation effect="fade" start="100" end="0" time="400" reversible="true">Hidden</animation>
+			</control>
 			<control type="label">	<!--Rating-->	
 				<visible>!IsEmpty(ListItem.Label2)</visible>
-				<posx>400</posx>
-				<posy>984</posy> 		
+				<posx>880</posx>
+				<posy>314</posy> 		
 				<width>500</width>
 				<font>TitanBold35</font>			
-				<textcolor>Black</textcolor>
+				<textcolor>TitanMain</textcolor>
 				<label>$INFO[ListItem.Label2,]</label>	
 			</control>
 			<control type="label">	<!--Page-Info-->	
@@ -152,17 +160,9 @@
 				<width>200</width>
 				<align>right</align>				
 				<font>Titan35</font>
-				<textcolor>Black</textcolor>	
+				<textcolor>TitanLightBlack</textcolor>	
 				<label>$INFO[Container.CurrentPage]/$INFO[Container.NumPages]</label>
 			</control>			
-			<control type="image">	<!--Rating-->						
-				<posx>100</posx>
-				<posy>1001</posy>
-				<width>270</width>
-				<height>25</height>	
-				<texture fallback="rating/stars/NA.png">$INFO[ListItem.Rating,rating/10stars/,.png]</texture>	
-				<animation effect="fade" start="100" end="0" time="400" reversible="true">Hidden</animation>
-			</control>
 		</control>
 	</include>
 	
