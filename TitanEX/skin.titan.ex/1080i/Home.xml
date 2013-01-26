@@ -90,21 +90,24 @@
 			<scrolltime tween="cubic" easing="inout">500</scrolltime>
 
 			<itemlayout width="620" height="265">
+			
+			
 				<control type="image"><!--Button-->				
 					<posx>0</posx>
 					<posy>0</posy>
 					<width>623</width>
 					<height>271</height>					
-					<texture>$INFO[ListItem.Icon]</texture>			
-				</control>		
+					<texture diffuse="home/home_defaultmask.png">$INFO[ListItem.Icon]</texture>
+					<aspectratio scalediffuse="false" align="left" aligny="top">scale</aspectratio>
+				</control>
 				<control type="image"><!--Button Ovelay-->				
 					<posx>0</posx>
 					<posy>0</posy>
 					<width>623</width>
-					<height>271</height>					
-					<texture>home/home_overlay.png</texture>
+					<height>271</height>						
+					<texture>home/home_overlay.png</texture>	
 					<aspectratio>keep</aspectratio>
-				</control>
+				</control>	
 				<control type="label"><!--Label-->
 					<posx>315</posx>
 					<posy>165</posy>
@@ -115,6 +118,7 @@
 					<font>TitanLight52</font>
 					<textcolor>TitanWhite</textcolor>					
 				</control>
+				
 			</itemlayout>
 			<focusedlayout width="620" height="265">
 				<control type="group">
@@ -148,12 +152,20 @@
 						<aspectratio>keep</aspectratio>
 						<visible>Skin.HasSetting(bg_change)</visible>
 					</control>	
-					<control type="image"><!--Button-->				
+					<control tye="image"><!--Button-->				
 						<posx>0</posx>
 						<posy>0</posy>						
 						<width>623</width>
 						<height>271</height>		
 						<texture>$INFO[ListItem.Icon]</texture>			
+					</control>
+					<control type="image"><!--Button Ovelay-->				
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>623</width>
+						<height>271</height>					
+						<texture diffuse="home/home_defaultmask.png">$INFO[ListItem.Icon]</texture>
+						  <aspectratio scalediffuse="false" align="left" aligny="top">scale</aspectratio>
 					</control>
 					<control type="image"><!--Button Ovelay-->				
 						<posx>0</posx>
@@ -178,45 +190,45 @@
 
 			<content>
 				<item id="2"><!--Music-->					
-					<icon>home/home_music.png</icon>	
+					<icon fallback="home/home_music.png">$INFO[Skin.String(Home_Custom_Back_Music_Image)]</icon>
 					<label>2</label>
 					<onclick>ActivateWindow(Music)</onclick>
 				</item>
 				<item id="1"><!--Videos-->								
-					<icon>home/home_videos.png</icon>	
+					<icon fallback="home/home_videos.png">$INFO[Skin.String(Home_Custom_Back_Videos_Image)]</icon>
 					<label>3</label>
 					<onclick>ActivateWindow(Video,root)</onclick>
 				</item>			
 				<item id="4"><!--Movies-->					
-					<icon>home/home_movies.png</icon>	
+					<icon fallback="home/home_movies.png">$INFO[Skin.String(Home_Custom_Back_Movies_Image)]</icon>
 					<label>342</label>
 					<onclick>ActivateWindow(Video,movietitles,return)</onclick>
 					<visible>Library.HasContent(Movies)</visible>
 				</item>
 				<item id="5"><!--TV Shows-->					
-					<icon>home/home_tvshows.png</icon>	
+					<icon fallback="home/home_tvshows.png">$INFO[Skin.String(Home_Custom_Back_TVShows_Image)]</icon>	
 					<label>20343</label>
 					<onclick>ActivateWindow(Video,tvshowtitles,return)</onclick>
 					<visible>Library.HasContent(TVShows)</visible>
 				</item>		
 				<item id="8"><!--Video Addons-->					
 					<label>Video-Addons</label>					
-					<icon>home/home_videoaddons.png</icon>							
+					<icon fallback="home/home_videoaddons.png">$INFO[Skin.String(Home_Custom_Back_Videoaddons_Image)]</icon>					
 					<onclick>ActivateWindow(Video,addons,return)</onclick>
 					<visible>!Skin.HasSetting(HomeMenuNoVideoAddonsButton)</visible>
 				</item>						
 				<item id="6"><!--Weather-->					
-					<icon>home/home_weather.png</icon>	
+					<icon fallback="home/home_weather.png">$INFO[Skin.String(Home_Custom_Back_Weather_Image)]</icon>
 					<label>24027</label>
 					<onclick>ActivateWindow(weather)</onclick>
 				</item>					
 				<item id="3"><!--Pictures-->					
-					<icon>home/home_pictures.png</icon>	
+					<icon fallback="home/home_pictures.png">$INFO[Skin.String(Home_Custom_Back_Pictures_Image)]</icon>
 					<label>1</label>
 					<onclick>ActivateWindow(Pictures)</onclick>
 				</item>	
 				<item id="7"><!--Settings-->					
-					<icon>home/home_settings.png</icon>	
+					<icon fallback="home/home_settings.png">$INFO[Skin.String(Home_Custom_Back_Settings_Image)]</icon>
 					<label>5</label>
 					<onclick>ActivateWindow(settings)</onclick>
 				</item>							

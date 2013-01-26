@@ -9,7 +9,7 @@
 		<include>GlobalBackground</include>
 		<!--Titan Versiom-->	
 		<include>Titan_Version</include>	
-
+		<include>Header_Settings</include>
 		<control type="list" id="9000">
 			<posx>780</posx>
 			<posy>162</posy>

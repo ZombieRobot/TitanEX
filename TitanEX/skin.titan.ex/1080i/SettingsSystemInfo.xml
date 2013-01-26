@@ -6,7 +6,7 @@
 	<controls>
 
 		<include>GlobalBackground</include>
-
+		<include>Header_Settings</include>
 		<control type="label">
 			<description>Header Label</description>
 			<posx>660</posx>

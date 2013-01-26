@@ -10,22 +10,32 @@
 	<include name="Titan_Version">
 		<control type="label"> 		
 			<posx>1860</posx>
-			<posy>980</posy>
+			<posy>1030</posy>
 			<width>500</width>
 			<align>right</align>
 			<font>TitanBold40</font>
 			<textcolor>TitanGrey</textcolor>
-			<label>Titan EX 0.0.3</label>		
+			<label>Titan EX 0.0.4</label>		
 			<include>animation_fade_open_close</include>
 		</control>
 		<control type="label"> 		
 			<posx>1860</posx>
-			<posy>1020</posy>
+			<posy>990</posy>
 			<width>500</width>
 			<align>right</align>
 			<font>TitanBold425</font>
 			<textcolor>TitanGrey</textcolor>
 			<label>ZombieRobot Build</label>		
+			<include>animation_fade_open_close</include>
+		</control>
+		<control type="label"> 		
+			<posx>210</posx>
+			<posy>1020</posy>
+			<width>500</width>
+			<align>right</align>
+			<font>Titan22</font>
+			<textcolor>TitanGrey</textcolor>
+			<label>Coded by reazorFX</label>		
 			<include>animation_fade_open_close</include>
 		</control>
 	</include>	
@@ -119,32 +129,41 @@
 			<include>animation_fade_visible_hidden</include>
 			<animation effect="fade" time="600" >WindowOpen</animation>		
 			<animation effect="fade" time="600" >WindowClose</animation>		
-			<control type="image">
+			<control type="button" id="610">
 				<visible>Container.Content(movies)</visible>
 				<posx>50</posx>
 				<posy>45</posy>
 				<height>80</height>
 				<width>80</width>
 				<aligny>center</aligny>
-				<texture>icons/small/movies.png</texture>				
+				<texture>icons/small/movies.png</texture>	
+				<onclick>ActivateWindow(home)</onclick>
+				<texturefocus>icons/small/movies.png</texturefocus>
+				<texturenofocus>icons/small/movies.png</texturenofocus>
 			</control>
-			<control type="image">
+			<control type="button" id="611">
 				<visible>Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
 				<posx>50</posx>
 				<posy>45</posy>
 				<height>80</height>
 				<width>80</width>
 				<aligny>center</aligny>
-				<texture>icons/small/tvshows.png</texture>				
+				<texture>icons/small/tvshows.png</texture>	
+				<onclick>ActivateWindow(home)</onclick>
+				<texturefocus>icons/small/tvshows.png</texturefocus>
+				<texturenofocus>icons/small/tvshows.png</texturenofocus>
 			</control>
-			<control type="image">
+			<control type="button" id="612">
 				<visible>!Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes)</visible>
 				<posx>50</posx>
 				<posy>45</posy>
 				<height>80</height>
 				<width>80</width>
 				<aligny>center</aligny>
-				<texture>icons/small/videos.png</texture>				
+				<texture>icons/small/videos.png</texture>	
+				<onclick>ActivateWindow(home)</onclick>
+				<texturefocus>icons/small/videos.png</texturefocus>
+				<texturenofocus>icons/small/videos.png</texturenofocus>
 			</control>
 			<control type="label">
 				<visible>Container.Content(movies)</visible>
@@ -187,13 +206,16 @@
 			<include>animation_fade_visible_hidden</include>
 			<animation effect="fade" time="600" >WindowOpen</animation>		
 			<animation effect="fade" time="600" >WindowClose</animation>
-			<control type="image">
+			<control type="button" id="613">
 				<posx>50</posx>
 				<posy>45</posy>
 				<height>80</height>
 				<width>80</width>
 				<aligny>center</aligny>
-				<texture>icons/small/music.png</texture>				
+				<texture>icons/small/music.png</texture>
+				<onclick>ActivateWindow(home)</onclick>
+				<texturefocus>icons/small/music.png</texturefocus>
+				<texturenofocus>icons/small/music.png</texturenofocus>
 			</control>			
 			<control type="label">				
 				<posx>150</posx>
@@ -213,13 +235,16 @@
 			<include>animation_fade_visible_hidden</include>
 			<animation effect="fade" time="600" >WindowOpen</animation>		
 			<animation effect="fade" time="600" >WindowClose</animation>
-			<control type="image">
+			<control type="button" id="614">
 				<posx>50</posx>
 				<posy>45</posy>
 				<height>80</height>
 				<width>80</width>
 				<aligny>center</aligny>
-				<texture>icons/small/pictures.png</texture>				
+				<texture>icons/small/pictures.png</texture>	
+				<onclick>ActivateWindow(home)</onclick>
+				<texturefocus>icons/small/pictures.png</texturefocus>
+				<texturenofocus>icons/small/pictures.png</texturenofocus>
 			</control>			
 			<control type="label">				
 				<posx>150</posx>
@@ -239,13 +264,16 @@
 			<include>animation_fade_visible_hidden</include>
 			<animation effect="fade" time="600" >WindowOpen</animation>		
 			<animation effect="fade" time="600" >WindowClose</animation>
-			<control type="image">
+			<control type="button" id="615">
 				<posx>50</posx>
 				<posy>45</posy>
 				<height>80</height>
 				<width>80</width>
 				<aligny>center</aligny>
-				<texture>icons/small/weather.png</texture>				
+				<texture>icons/small/weather.png</texture>	
+				<onclick>ActivateWindow(home)</onclick>
+				<texturefocus>icons/small/weather.png</texturefocus>
+				<texturenofocus>icons/small/weather.png</texturenofocus>
 			</control>			
 			<control type="label">				
 				<posx>150</posx>
@@ -265,13 +293,16 @@
 			<include>animation_fade_visible_hidden</include>
 			<animation effect="fade" time="600" >WindowOpen</animation>		
 			<animation effect="fade" time="600" >WindowClose</animation>
-			<control type="image">
+			<control type="button" id="616">
 				<posx>30</posx>
 				<posy>45</posy>
 				<height>80</height>
 				<width>80</width>
 				<aligny>center</aligny>
-				<texture>icons/small/settings.png</texture>				
+				<texture>icons/small/settings.png</texture>		
+				<onclick>ActivateWindow(home)</onclick>
+				<texturefocus>icons/small/settings.png</texturefocus>
+				<texturenofocus>icons/small/settings.png</texturenofocus>
 			</control>			
 			<control type="label">				
 				<posx>130</posx>
@@ -291,13 +322,16 @@
 			<include>animation_fade_visible_hidden</include>
 			<animation effect="fade" time="600" >WindowOpen</animation>		
 			<animation effect="fade" time="600" >WindowClose</animation>
-			<control type="image">
+			<control type="button" id="617">
 				<posx>30</posx>
 				<posy>45</posy>
 				<height>80</height>
 				<width>80</width>
 				<aligny>center</aligny>
-				<texture>icons/small/filemanager.png</texture>				
+				<texture>icons/small/filemanager.png</texture>	
+				<onclick>ActivateWindow(home)</onclick>
+				<texturefocus>icons/small/filemanager.png</texturefocus>
+				<texturenofocus>icons/small/filemanager.png</texturenofocus>
 			</control>			
 			<control type="label">				
 				<posx>130</posx>
@@ -317,13 +351,16 @@
 			<include>animation_fade_visible_hidden</include>
 			<animation effect="fade" time="600" >WindowOpen</animation>		
 			<animation effect="fade" time="600" >WindowClose</animation>
-			<control type="image">
+			<control type="button" id="618">
 				<posx>30</posx>
 				<posy>45</posy>
 				<height>80</height>
 				<width>80</width>
 				<aligny>center</aligny>
-				<texture>icons/small/programs.png</texture>				
+				<texture>icons/small/programs.png</texture>		
+				<onclick>ActivateWindow(home)</onclick>
+				<texturefocus>icons/small/programs.png</texturefocus>
+				<texturenofocus>icons/small/programs.png</texturenofocus>
 			</control>			
 			<control type="label">				
 				<posx>130</posx>
@@ -343,13 +380,16 @@
 			<include>animation_fade_visible_hidden</include>
 			<animation effect="fade" time="600" >WindowOpen</animation>		
 			<animation effect="fade" time="600" >WindowClose</animation>
-			<control type="image">
+			<control type="button" id="619">
 				<posx>30</posx>
 				<posy>45</posy>
 				<height>80</height>
 				<width>80</width>
 				<aligny>center</aligny>
-				<texture>icons/small/addons.png</texture>				
+				<texture>icons/small/addons.png</texture>	
+				<onclick>ActivateWindow(home)</onclick>
+				<texturefocus>icons/small/addons.png</texturefocus>
+				<texturenofocus>icons/small/addons.png</texturenofocus>
 			</control>			
 			<control type="label">				
 				<posx>130</posx>
@@ -565,6 +605,21 @@
 				<texture>$INFO[Window(Weather).Property(Current.FanartCode),weather/128x128/,.png]</texture>
 				<visible>Weather.IsFetched</visible>				
 			</control>
+			<control type="button" id="609">	<!--Weather Icon-->		
+				<include>animation_fade_visible_hidden</include>
+				<include>animation_fade_open_close</include>
+				<posy>40</posy>
+				<posx>1750</posx>
+				<height>110</height>
+				<width>110</width>
+				<aligny>center</aligny>
+				<aspectratio align="right">keep</aspectratio>
+				<onclick>ActivateWindow(weather)</onclick>
+				<texture>$INFO[Window(Weather).Property(Current.FanartCode),weather/128x128/,.png]</texture>
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<visible>Weather.IsFetched</visible>				
+			</control>	
 		</control>		
 	</include>	
 	

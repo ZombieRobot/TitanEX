@@ -255,6 +255,12 @@
 		<string id="50109">K</string>
 <!--Zombie-->
 		<string id="50110">Change Background</string>
-
-
+		<string id="50111">Set Home Menu Weater Background</string>
+		<string id="50112">Background Customizer</string>
+		<string id="50113">Home-Movies</string>
+		<string id="50114">Single Image</string>
+		<string id="50115">Multi Image</string>
+		<string id="50116">Default</string>
+		<string id="50117">Home-Music</string>
+		<string id="50118">Home-Videos</string>
 </strings>

@@ -95,7 +95,7 @@
 		<textcolor>TitanDarkGrey</textcolor>
 		<focusedcolor>TitanBlack</focusedcolor>
 		<disabledcolor>TitanGrey</disabledcolor>		
-		<texturefocus>slider.png</texturefocus>
+		<texturefocus>sliderlong.png</texturefocus>
 		<texturenofocus></texturenofocus>
 		<textureradiofocus>common/settings_checkmark_checked.png</textureradiofocus>
 		<textureradionofocus>common/settings_checkmark_unchecked.png</textureradionofocus>

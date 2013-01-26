@@ -6,7 +6,7 @@
 	<controls>
 
 		<include>GlobalBackground</include>
-
+		<include>Header_Settings</include>
 		<control type="list" id="100">
 			<description>List</description>
 			<posx>15</posx>
@@ -74,6 +74,11 @@
 					<onclick>-</onclick>
 				</item>
 
+				<item id="4">
+					<description>home menu background customizer</description>
+					<label>50112</label>
+					<onclick>-</onclick>
+				</item>
 			</content>
 
 		</control>
@@ -119,9 +124,18 @@
 					<onclick>Skin.ToggleSetting(bg_change)</onclick>
 					<selected>Skin.HasSetting(bg_change)</selected>
 				</control>
-
+				<control type="button" id="204">
+					<description>Background change</description>
+					<width>1230</width>
+					<align>left</align>
+					<label>50111</label>
+					<label2>$INFO[Skin.String(Home_Custom_Back_Weather_Image)]</label2>
+				    <onclick>Skin.SetImage(Home_Custom_Back_Weather_Image)</onclick>
+					<onclick>Skin.Reset(Home_Custom_Back_Weather_Folder)</onclick>
+				</control>
+				
 			</control>
-
+			
 			<control type="grouplist" id="300">
 				<description>Control Area</description>
 				<width>1230</width>
@@ -229,7 +243,93 @@
 				</control>
 
 			</control>
-
+			<control type="grouplist" id="600">
+				<description>home background customizer</description>
+				<width>1230</width>
+				<height>1220</height>
+				<itemgap>3</itemgap>
+				<onup>200</onup>
+				<ondown>200</ondown>
+				<onleft>100</onleft>
+				<onright>-</onright>
+				<orientation>vertical</orientation>
+				<visible>Container(100).Hasfocus(4)</visible>
+			<!-- MOVIES -->
+				 
+				<control type="radiobutton" id="3001">
+					<description>Background change</description>
+					<width>1230</width>
+					<align>left</align>
+					<label>50113</label>
+					<visible>!Skin.HasSetting(HomeMenuNoMoviesButton)</visible>
+					<onclick>Skin.ToggleSetting(MoviesBackground)</onclick>
+					<onclick>Skin.HasSetting(MoviesBackground)</onclick>
+				</control>
+				<control type="button" id="3002">
+					<include>DiffuseButtonsSettings2</include>
+					<label>50114</label>
+					<onclick>Skin.SetImage(Home_Custom_Back_Movies_Image)</onclick>
+					<onclick>Skin.Reset(Home_Custom_Back_Movies_Folder)</onclick>
+					<visible>Skin.HasSetting(MoviesBackground)</visible>
+				</control>
+				<control type="button" id="3003">
+					<include>DiffuseButtonsSettings2</include>
+					<label>50115</label>
+					<onclick>Skin.SetPath(Home_Custom_Back_Movies_Folder)</onclick>
+					<onclick>Skin.Reset(Home_Custom_Back_Movies_Image)</onclick>
+					<visible>Skin.HasSetting(MoviesBackground)</visible>
+				</control>
+				<!-- Music -->
+				 
+				<control type="radiobutton" id="3004">
+					<description>Background change</description>
+					<width>1230</width>
+					<align>left</align>
+					<label>50117</label>
+					<visible>!Skin.HasSetting(HomeMenuNoMusicButton)</visible>
+					<onclick>Skin.ToggleSetting(MusicBackground)</onclick>
+					<onclick>Skin.HasSetting(MusicBackground)</onclick>
+				</control>
+				<control type="button" id="3005">
+					<include>DiffuseButtonsSettings2</include>
+					<label>50114</label>
+					<onclick>Skin.SetImage(Home_Custom_Back_Music_Image)</onclick>
+					<onclick>Skin.Reset(Home_Custom_Back_Music_Folder)</onclick>
+					<visible>Skin.HasSetting(MusicBackground)</visible>
+				</control>
+				<control type="button" id="3006">
+					<include>DiffuseButtonsSettings2</include>
+					<label>50115</label>
+					<onclick>Skin.SetPath(Home_Custom_Back_Music_Folder)</onclick>
+					<onclick>Skin.Reset(Home_Custom_Back_Music_Image)</onclick>
+					<visible>Skin.HasSettingMusicBackground)</visible>
+				</control>
+				<!-- Videos -->
+				 
+				<control type="radiobutton" id="3007">
+					<description>Background change</description>
+					<width>1230</width>
+					<align>left</align>
+					<label>50118</label>
+					<visible>!Skin.HasSetting(HomeMenuNoVideosButton)</visible>
+					<onclick>Skin.ToggleSetting(VideosBackground)</onclick>
+					<onclick>Skin.HasSetting(VideosBackground)</onclick>
+				</control>
+				<control type="button" id="3008">
+					<include>DiffuseButtonsSettings2</include>
+					<label>50114</label>
+					<onclick>Skin.SetImage(Home_Custom_Back_Videos_Image)</onclick>
+					<onclick>Skin.Reset(Home_Custom_Back_Videos_Folder)</onclick>
+					<visible>Skin.HasSetting(VideosBackground)</visible>
+				</control>
+				<control type="button" id="3009">
+					<include>DiffuseButtonsSettings2</include>
+					<label>50115</label>
+					<onclick>Skin.SetPath(Home_Custom_Back_Videos_Folder)</onclick>
+					<onclick>Skin.Reset(Home_Custom_Back_Videos_Image)</onclick>
+					<visible>Skin.HasSettingVideosBackground)</visible>
+				</control>
+			</control>	
 		</control>
 
 	</controls>
